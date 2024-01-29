@@ -1,0 +1,34 @@
+.bg-header {
+    height: 450px;
+   /*  background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dmVuZGl0ZXxlbnwwfHwwfHx8MA%3D%3D'); */
+   background-image: url('/public\media\vecteezy_e-commerce-hand-holding-shopping-bag-and-credit-card-from_6907007.jpg');
+    background-position: center;
+    background-size: cover;
+
+  /*   -webkit-mask-image: linear-gradient(black, transparent);
+    mask-image: linear-gradient(black, transparent); */
+    justify-content: end;
+}
+
+.div-head {
+    width: 350px;
+    height: 300px;
+    background-color:white;
+    border-radius: 10px;
+    margin-right: 50px;
+    margin-top: 50px;
+}
+
+.btn-div-head {
+  border: none;
+  width: 100%;
+  margin-top: 20px;
+  background-color: rgb(201, 230, 239);
+}
+
+.btn-div-head:hover{
+  background-color: rgb(182, 226, 239);
+}
+
+  
+    

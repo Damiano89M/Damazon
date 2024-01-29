@@ -1,0 +1,15 @@
+.h3-row-3 {
+    margin-left: 90px;
+}
+
+.tag-a-veditutti {
+    margin-left: 50px;
+}
+
+.messaggio {
+    border: 0.8px solid rgba(0, 0, 0, 0.3);
+    opacity: 0.8;
+    margin-left: 120px;
+    border-radius: 3px;
+    height: 50px;
+}

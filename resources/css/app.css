@@ -1,0 +1,7 @@
+@import 'bootstrap';
+@import 'nav';
+@import 'login-Register';
+@import 'card';
+@import 'body';
+@import 'header';
+@import 'home';

@@ -1,0 +1,23 @@
+body {
+    
+    background-color: rgb(236, 246, 249) ;
+}
+
+.categorie {
+    text-decoration: none;
+    color: rgb(58, 57, 57);
+    border-bottom: solid 1px transparent;
+}
+
+
+.categorie:hover{
+   border-bottom: solid 1px;
+}
+
+.col-categorie {
+
+    opacity: 0.8;
+}
+
+
+   

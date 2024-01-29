@@ -1,0 +1,23 @@
+.form-accesso {
+    margin-top: 100px;
+    /* background-color: #393053; */
+    background-color: rgb(201, 230, 239);
+    border-radius: 10px;
+}
+.accesso {
+    /* background-image: url('https://images.unsplash.com/photo-1557389352-e721da78ad9f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDg3fGJvOGpRS1RhRTBZfHxlbnwwfHx8fHw%3D'); */
+    background-image: url('/public\media\vector-JUL-2021-61.jpg');
+    height: 670px;
+    background-position: center;
+    background-size: cover;
+   
+}
+
+.btn-accesso {
+    background-color: green;
+    width: 100%;
+}
+
+.btn-accesso:hover{ 
+    background-color: rgb(0, 110, 0);
+}
