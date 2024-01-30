@@ -40,5 +40,6 @@
             <h3 class="text-center">Non ci sono articoli <a href="{{ route('article.create') }}">Inseriscine uno!</a></h3>
         @endforelse
         </div>
+        
     </div>
 </x-layout>

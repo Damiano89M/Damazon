@@ -16,9 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
+//Ricerca per prezzo//
+Route::get('/ricerca/articolo', [PublicController::class, 'searchArticle'])->name('article.search');
 
 Route::get('/Article/create', [ArticleController::class, 'create'])->name('article.create');
 Route::get('/Article/index', [ArticleController::class, 'index'])->name('article.index');
 Route::get('Article/show{article}', [ArticleController::class, 'show'])->name('article.show');
 Route::delete('/Article/destroy{article}', [ArticleController::class, 'destroy'])->name('article.destroy');
 Route::get('Article/category{category}', [ArticleController::class, 'indexCategory'])->name('article.indexCategory');
+

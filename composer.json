@@ -6,13 +6,18 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "algolia/algoliasearch-client-php": "^3.4",
         "guzzlehttp/guzzle": "^7.2",
+        "http-interop/http-factory-guzzle": "^1.2",
+        "illuminate/pagination": "*",
         "intervention/image-laravel": "^1.0",
         "laravel/fortify": "^1.20",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
+        "laravel/scout": "^10.8",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.4",
+        "meilisearch/meilisearch-php": "^1.6",
         "spatie/image": "*"
     },
     "require-dev": {

@@ -6,8 +6,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-            <form class="d-flex w-75" role="search">
-                <input class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search">
+            <form action="{{ route('article.search') }}" method="GET" class="d-flex w-75" role="search">
+                <input name="searched" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Cerca</button>
             </form>
         </div>

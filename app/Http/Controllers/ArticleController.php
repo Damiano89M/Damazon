@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
+
 class ArticleController extends Controller
 {
     public function __construct()
@@ -18,7 +19,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
+        /* $articles = Article::paginate(10); */
+        $articles = Article::orderBy('created_at', 'desc')->paginate(12);
         return view('article.index', compact('articles'));
     }
 
