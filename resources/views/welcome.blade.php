@@ -30,7 +30,7 @@
 
         </div>
         {{-- Card --}}
-        <div class="row justify-content-center ">
+        <div class="row justify-content-center row-card-home">
             @forelse ($articles as $article )
         <div class="col-12 col-md-2 mt-md-2 ">
             <x-card :article="$article" />

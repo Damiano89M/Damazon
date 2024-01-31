@@ -1,4 +1,11 @@
 .container-card {
-    padding-left: 150px;
-    padding-right: 150px;
+    padding-left: 220px;
+    padding-right: 220px;
+}
+
+.bg-header-index {
+    height: 450px;
+    background-image: url('/public\media\vecteezy_fast-delivery-package-by-scooter-on-mobile-order-package-in_4987903.jpg');
+    background-position: center;
+    background-size: cover;
 }

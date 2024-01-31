@@ -23,7 +23,7 @@
                                     <td>{{ $cart->price }}</td>
                                     <td>
                                       @if ($cart->article && $cart->article->images && !$cart->article->images->isEmpty())
-                                      <img class="img-fluid img-show" src="{{ Storage::url($cart->article->images->first()->path) }}" alt="">
+                                      <img class="img-fluid img-show-cart" src="{{ Storage::url($cart->article->images->first()->path) }}" alt="">
                                   @else
                                       <!-- Immagine di fallback o nessuna immagine -->
                                       <img src="{{ asset('path/to/fallback-image.jpg') }}" alt="">

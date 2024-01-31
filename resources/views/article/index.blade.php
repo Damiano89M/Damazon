@@ -10,7 +10,13 @@
             </div>
         </div>
     </div>
-    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 bg-header-index">
+
+            </div>
+        </div>
+    </div>
     <div class="container container-card">
 
         <div class="row justify-content-evely">

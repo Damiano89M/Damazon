@@ -11,8 +11,8 @@
                     @if ($article->images)
                         <div class="carousel-inner carousss">
                             @foreach ($article->images as $image)
-                                <div class="carousel-item @if ($loop->first) active @endif">
-                                    <img src="{{ Storage::url($image->path) }}" class="img-fluid" alt="...">
+                                <div class="carousel-item div-img-show @if ($loop->first) active @endif">
+                                    <img src="{{ Storage::url($image->path) }}" class="img-fluid img-show" alt="...">
                                 </div>
                             @endforeach
                         </div>

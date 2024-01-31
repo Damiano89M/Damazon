@@ -1,5 +1,5 @@
 <a href="{{ route('article.show', $article) }}">
-    <div class="card" style="width: 15rem;">
+    <div class="card" style="width: 13rem;">
         <img src="{{ !$article->images()->get()->isEmpty()? Storage::url($article->images()->first()->path): 'public\media\default-avatar-profile-icon-vector-social-media-user-photo-183042379.jpg' }}"
             class="card-img-top" alt="...">
         {{-- <img src="{{ !$article->images()->get()->isEmpty()? $article->images()->first()->getUrl(200, 200): '/public/media/default-img.jpg' }}"
