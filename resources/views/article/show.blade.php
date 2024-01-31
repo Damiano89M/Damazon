@@ -1,5 +1,10 @@
 <x-layout>
     <div class="container p-5">
+        @if (session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
         <div class="row">
             <div class="col-12 col-md-8">
                 <div id="showCarousel" class="carousel">
@@ -7,8 +12,7 @@
                         <div class="carousel-inner carousss">
                             @foreach ($article->images as $image)
                                 <div class="carousel-item @if ($loop->first) active @endif">
-                                    <img src="{{ Storage::url($image->path) }}" class="img-fluid"
-                                        alt="...">
+                                    <img src="{{ Storage::url($image->path) }}" class="img-fluid" alt="...">
                                 </div>
                             @endforeach
                         </div>
@@ -32,7 +36,13 @@
                 <p>{{ $article->created_at->translatedFormat('D d/m/y') }}</p>
                 <p>{{ Auth::user()->name ?? 'Non specificato' }}</p>
                 <p class="card-text colonna-2">{{ $article->created_at->diffForHumans() }}</p>
+
+                <form action="{{ route('article.addToCart', $article) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-primary">Aggiungi al carrello</button>
+                </form>
             </div>
+
         </div>
     </div>
 </x-layout>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,4 +25,8 @@ Route::get('/Article/index', [ArticleController::class, 'index'])->name('article
 Route::get('Article/show{article}', [ArticleController::class, 'show'])->name('article.show');
 Route::delete('/Article/destroy{article}', [ArticleController::class, 'destroy'])->name('article.destroy');
 Route::get('Article/category{category}', [ArticleController::class, 'indexCategory'])->name('article.indexCategory');
+
+//carrello//
+Route::post('/Article/addToCart{article}', [CartController::class, 'addToCart'])->name('article.addToCart');
+Route::get('/Article/show/cart', [CartController::class, 'showCart'])->name('article.showCart');
 

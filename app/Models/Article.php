@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Cart;
 use App\Models\User;
 use App\Models\Image;
 use App\Models\Category;
@@ -40,4 +41,9 @@ class Article extends Model
     public function category() {
         return $this->belongsTo(Category::class);
     }
+
+    public function carts()
+{
+    return $this->hasMany(Cart::class);
+}
 }

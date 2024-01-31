@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Cart;
 use App\Models\Article;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
@@ -18,6 +19,10 @@ class Image extends Model
         return $this->belongsTo(Article::class);
     }
 
+     public function cart()
+    {
+        return $this->hasOne(Cart::class);
+    }  
     public static function getUrlByFilePath($filepath, $w = null, $h = null) {
 
         if(!$w && !$h) {

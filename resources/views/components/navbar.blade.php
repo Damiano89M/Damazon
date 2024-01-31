@@ -18,6 +18,9 @@
                     <a class="nav-link text-dark" aria-current="page" href="{{ route('homepage') }}">Home</a>
                     <a class="nav-link text-dark" aria-current="page" href="{{ Route('article.create') }}">Inserisci articolo</a>
                     <a class="nav-link text-dark" aria-current="page" href="{{ Route('article.index') }}">articoli</a>
+                    <a class="nav-link text-dark" aria-current="page" href="{{ Route('article.showCart') }}"><i class="fa-solid fa-cart-shopping">
+                        <span class="badge badge-pill badge-danger"></span>
+                        </i></a>
                     <a class="nav-link text-dark" aria-current="page" href="#"
                         onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
                     <form action="{{ route('logout') }}" method="POST" id="form-logout">
