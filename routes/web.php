@@ -19,7 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 //Ricerca per prezzo//
 Route::get('/ricerca/articolo', [PublicController::class, 'searchArticle'])->name('article.search');
-
+//profilo utente//
+Route::get('/auth/profile', [PublicController::class, 'profile'])->name('auth.profile');
+//articoli//
 Route::get('/Article/create', [ArticleController::class, 'create'])->name('article.create');
 Route::get('/Article/index', [ArticleController::class, 'index'])->name('article.index');
 Route::get('Article/show{article}', [ArticleController::class, 'show'])->name('article.show');
@@ -29,4 +31,5 @@ Route::get('Article/category{category}', [ArticleController::class, 'indexCatego
 //carrello//
 Route::post('/Article/addToCart{article}', [CartController::class, 'addToCart'])->name('article.addToCart');
 Route::get('/Article/show/cart', [CartController::class, 'showCart'])->name('article.showCart');
+
 

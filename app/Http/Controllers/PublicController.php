@@ -23,4 +23,12 @@ class PublicController extends Controller
         $articles = Article::orderBy('created_at', 'desc')->take(5)->get();
         return view('welcome', compact('articles'));
     }
+
+    public function profile() {
+
+        return view('auth.profile');
+    }
+
+    
+        
 }

@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse justify-content-end interazioni" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 @auth
-                    <a class="nav-link text-dark" aria-current="page" href="#">{{ Auth::user()->name }}</a>
+                    <a class="nav-link text-dark" aria-current="page" href="{{ route('auth.profile') }}">{{ Auth::user()->name }}</a>
                     <a class="nav-link text-dark" aria-current="page" href="{{ route('homepage') }}">Home</a>
                     <a class="nav-link text-dark" aria-current="page" href="{{ Route('article.create') }}">Inserisci articolo</a>
                     <a class="nav-link text-dark" aria-current="page" href="{{ Route('article.index') }}">articoli</a>

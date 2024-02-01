@@ -44,27 +44,8 @@ class CartController extends Controller
 
         $carts = Cart::all();
 
-        $user = Auth::user();
-
         return view('article.showCart', compact('carts')); 
 
-/* 
-        $user = Auth::user();
-
-      
-        if ($user) {
-            $cart = $user->cart;
-
-            if ($cart) {
-                $carts = $cart->articles;
-            } else {
-                $carts = []; // Inizializza come array vuoto se l'utente non ha un carrello
-            }
-
-            return view('article.showCart', compact('carts'));
-        } else {
-            return redirect()->route('login');
-        } */
     }
 
 }

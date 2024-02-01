@@ -25,7 +25,7 @@
     }
   }); */
 
-  document.addEventListener('DOMContentLoaded', function() {
+/*   document.addEventListener('DOMContentLoaded', function() {
     const carousel = document.querySelector('.carousel');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
@@ -76,6 +76,40 @@
       const translateValue = -currentIndex * 100 + '%';
       carousel.style.transform = 'translateX(' + translateValue + ')';
     }
-  });
+  }); */
+  
+  //Modale//
+  document.addEventListener('DOMContentLoaded', function() {
+    var apriModaleBtns = document.querySelectorAll('.apriModale');
+    var chiudiModaleBtns = document.querySelectorAll('.chiudi');
+    var modali = document.querySelectorAll('.modale');
+
+    apriModaleBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var target = btn.getAttribute('data-target');
+            var modale = document.getElementById(target);
+            if (modale) {
+                modale.style.display = 'block';
+            }
+        });
+    });
+
+    chiudiModaleBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var target = btn.getAttribute('data-target');
+            var modale = document.getElementById(target);
+            if (modale) {
+                modale.style.display = 'none';
+            }
+        });
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target.classList.contains('modale')) {
+            event.target.style.display = 'none';
+        }
+    });
+});
+  
   
   

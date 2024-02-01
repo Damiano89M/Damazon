@@ -72,7 +72,7 @@ class ArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Article $article)
+  /*   public function destroy(Article $article)
     {
       
 
@@ -84,5 +84,5 @@ class ArticleController extends Controller
             $article->delete();
          return redirect()->back()->with('message', 'Articolo eliminato con successo');
        
-    }
+    } */
 }

@@ -9,11 +9,7 @@
             <p class="card-text p1">{{ Str::limit($article->description, '20') }}</p>
             <p class="card-text p2">{{ $article->price }}€</p>
             <p class="card-text p3"> {{ $article->category->name ?? 'categoria non specificata' }}</p>
-            {{--     <form action="{{ route('article.destroy', $article) }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-primary">Elimina</button>
-            </form> --}}
+          
           
         </div>
     </div>
