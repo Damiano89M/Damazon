@@ -1,11 +1,82 @@
-.container-card {
+/* .container-card {
     padding-left: 220px;
     padding-right: 220px;
-}
+} */
 
 .bg-header-index {
-    height: 450px;
+    width: 80%;
+    margin: auto;
+    height: 300px;
     background-image: url('/public\media\vecteezy_fast-delivery-package-by-scooter-on-mobile-order-package-in_4987903.jpg');
     background-position: center;
     background-size: cover;
 }
+
+
+
+/* .slider-frame{
+    overflow: hidden;
+    height: 300px;
+    width: 100%px;
+    margin-left: 360px;
+    margin-top: 20px;
+}*/
+
+/*---------- SLIDE ANIMATION --------------*/
+
+
+/*@keyframes slide_animation{
+    0% {left:0px;}
+    10% {left:0px;}
+    20% {left:1200px;}
+    30% {left:1200px;}
+    40% {left: 2400px;}
+    50% {left: 2400px;}
+    60% {left: 1200px;}
+    70% {left: 1200px;}
+    80% {left: 0px;}
+    90% {left: 0px;}
+    100% {left:0px;}
+}
+
+@-webkit-keyframes slide_animation{
+    0% {left:0px;}
+    10% {left:0px;}
+    20% {left:1200px;}
+    30% {left:1200px;}
+    40% {left: 2400px;}
+    50% {left: 2400px;}
+    60% {left: 1200px;}
+    70% {left: 1200px;}
+    80% {left: 0px;}
+    90% {left: 0px;}
+    100% {left:0px;}
+}
+
+.slide-images{
+    width: 3600px;
+    height: 800px;
+    margin: 0 0 0 -2400px;
+    position: relative;
+    -webkit-animation-name: slide_animation;
+    animation-name: slide_animation;
+    -webkit-animation-duration: 33s;
+    animation-duration: 33s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+}
+
+.img-container{
+    height: 800px;
+    width: 1200px;
+    position: relative;
+    float: left;
+} */
+  
+
+
+

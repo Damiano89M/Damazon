@@ -29,17 +29,21 @@
             </div>
 
         </div>
-        {{-- Card --}}
-        <div class="row justify-content-center row-card-home">
-            @forelse ($articles as $article )
-        <div class="col-12 col-md-2 mt-md-2 ">
-            <x-card :article="$article" />
-        </div>
-            
-        @empty
-            <h3 class="text-center">Non ci sono articoli <a href="{{ route('article.create') }}">Inseriscine uno!</a></h3>
-        @endforelse
+    </div>
+        <div class="container">
+
+            {{-- Card --}}
+            <div class="row justify-content-center row-card-home">
+                @forelse ($articles as $article )
+            <div class="col-12 col-md-2 mt-md-2 ">
+                <x-card :article="$article" />
+            </div>
+                
+            @empty
+                <h3 class="text-center">Non ci sono articoli <a href="{{ route('article.create') }}">Inseriscine uno!</a></h3>
+            @endforelse
+            </div>
         </div>
         
-    </div>
+ 
 </x-layout>

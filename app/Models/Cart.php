@@ -11,20 +11,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Cart extends Model
 {
     use HasFactory;
-     
- /*    public function articles() {
+
+    /*    public function articles() {
         return $this->belongsToMany(Article::class);
     } */
     public function article()
-{
-    return $this->belongsTo(Article::class);
-}
-   /* public function user()
     {
-        return $this->hasMany(User::class);
-    } */ 
+        return $this->belongsTo(Article::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
     public function image()
-{
-    return $this->belongsTo(Image::class, 'image_id');
+    {
+        return $this->belongsTo(Image::class, 'image_id');
+    }
 }
-} 
