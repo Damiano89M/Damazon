@@ -58,7 +58,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view('article.edit', compact('article'));
     }
 
     /**
@@ -72,17 +72,17 @@ class ArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-  /*   public function destroy(Article $article)
+    public function destroy(Article $article)
     {
       
 
-            foreach ($article->images() as $image) {
+        /*     foreach ($article->images() as $image) {
                Storage::delete($image);
                $image->delete();
     
             }
             $article->delete();
-         return redirect()->back()->with('message', 'Articolo eliminato con successo');
+         return redirect()->back()->with('message', 'Articolo eliminato con successo'); */
        
-    } */
+    } 
 }

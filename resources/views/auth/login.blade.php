@@ -6,18 +6,22 @@
                     @csrf
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
-                      </div>
-                      @error('email')
-                      <div class="text-danger">{{ $message }}</div>
-                  @enderror
-                    <div class="mb-3">
+                        <input type="email" class="form-control" id="email" name="email"
+                            value="{{ old('email') }}">
+                    </div>
+                    @error('email')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                    <div class="mb-3 position-relative">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control" id="password" name="password">
+                        <i class="fa-regular fa-eye icona" onclick="mostrapassword()"></i>
+                       {{--  <ion-icon name="lock-closed-outline"><i class="fa-solid fa-eye icona"
+                            onclick="mostrapassword()"></i></ion-icon> --}}
                     </div>
                     @error('password')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="remember" name="remember">
                         <label class="form-check-label" for="remember">Ricordami</label>

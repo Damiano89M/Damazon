@@ -18,16 +18,18 @@
                     @error('email')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
-                    <div class="mb-3">
+                    <div class="mb-3 position-relative">
                       <label for="password" class="form-label">Password</label>
                       <input type="password" class="form-control" id="password" name="password">
+                      <i class="fa-regular fa-eye icona" onclick="showapassword()"></i>
                     </div>
                     @error('password')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
-                    <div class="mb-3">
+                    <div class="mb-3 position-relative">
                         <label for="password_confirmation" class="form-label">Conferma password</label>
                         <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
+                        <i class="fa-regular fa-eye icona" onclick="vediapassword()"></i>
                       </div>
                       @error('password_confirmation')
                       <div class="text-danger">{{ $message }}</div>

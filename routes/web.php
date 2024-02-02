@@ -27,6 +27,7 @@ Route::get('/Article/index', [ArticleController::class, 'index'])->name('article
 Route::get('Article/show{article}', [ArticleController::class, 'show'])->name('article.show');
 Route::delete('/Article/destroy{article}', [ArticleController::class, 'destroy'])->name('article.destroy');
 Route::get('Article/category{category}', [ArticleController::class, 'indexCategory'])->name('article.indexCategory');
+Route::get('/Article/edit{article}', [ArticleController::class, 'edit'])->name('article.edit');
 
 //carrello//
 Route::post('/Article/addToCart{article}', [CartController::class, 'addToCart'])->name('article.addToCart');
