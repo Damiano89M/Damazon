@@ -7,6 +7,7 @@ use App\Models\Cart;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class CartController extends Controller
 {
@@ -47,5 +48,19 @@ class CartController extends Controller
         return view('article.showCart', compact('carts')); 
 
     }
+
+  /*   public function destroy(Cart $cart)
+    {
+      
+
+            foreach ($cart->images() as $image) {
+               Storage::delete($image);
+               $image->delete();
+    
+            }
+            $cart->delete();
+        session()->flash('message', 'Articolo eliminato con successo');
+       
+    } */
 
 }
