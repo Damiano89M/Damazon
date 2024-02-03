@@ -1,17 +1,17 @@
 <div>
     <div>
-        <table class="table">
-            @if (session('message'))
-                <div class="alert alert-success">
-                    {{ session('message') }}
-                </div>
-            @endif
+        @if (session('message'))
+            <div id="message" class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+        <table id="form" class="table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Titolo</th>
+                    <th scope="col">Prezzo</th>
+                    <th scope="col">Azioni</th>
                 </tr>
             </thead>
             @forelse ($articles as $article)

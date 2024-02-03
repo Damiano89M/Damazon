@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class PublicController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
    public function searchArticle(request $request) {
     $minprice = $request->input('min_price', 0);
     $maxprice = $request->input('max_price', PHP_FLOAT_MAX);

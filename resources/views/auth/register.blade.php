@@ -4,23 +4,26 @@
             <div class="col-12 col-md-4">
                 <form class="p-5 form-accesso" action="{{ route('register') }}" method="POST">
                     @csrf
+                    <div class="mb-3 text-center">
+                      <span class="fs-3">Registrati</span>
+                  </div>
                     <div class="mb-3">
                         <label for="name" class="form-label">Nome utente</label>
-                        <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
+                        <input type="text" class="form-control input-accesso" id="name" name="name" value="{{ old('name') }}">
                       </div>
                       @error('name')
                       <div class="text-danger">{{ $message }}</div>
                   @enderror
                     <div class="mb-3">
                       <label for="email" class="form-label">Email</label>
-                      <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
+                      <input type="email" class="form-control input-accesso" id="email" name="email" value="{{ old('email') }}">
                     </div>
                     @error('email')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
                     <div class="mb-3 position-relative">
                       <label for="password" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="password" name="password">
+                      <input type="password" class="form-control input-accesso" id="password" name="password">
                       <i class="fa-regular fa-eye icona" onclick="showapassword()"></i>
                     </div>
                     @error('password')
@@ -28,7 +31,7 @@
                 @enderror
                     <div class="mb-3 position-relative">
                         <label for="password_confirmation" class="form-label">Conferma password</label>
-                        <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
+                        <input type="password" class="form-control input-accesso" id="password_confirmation" name="password_confirmation">
                         <i class="fa-regular fa-eye icona" onclick="vediapassword()"></i>
                       </div>
                       @error('password_confirmation')
@@ -39,6 +42,9 @@
                       <label class="form-check-label" for="exampleCheck1">Ricordami</label>
                     </div>
                     <button type="submit" class="btn btn-accesso">Registrati</button>
+                    <div class="mt-3">
+                      <span>hai già un account? <a href="{{ route('login') }}">Accedi</a></span>
+                  </div>
                   </form>
             </div>
         </div>

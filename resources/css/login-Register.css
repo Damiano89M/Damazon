@@ -1,25 +1,32 @@
+
 .form-accesso {
     margin-top: 100px;
     /* background-color: #393053; */
-    background-color: rgb(201, 230, 239);
+    /* background-color: rgb(201, 230, 239); */
     border-radius: 10px;
+    box-shadow: 5px 5px 8px #888888;
+    
+    
 }
 .accesso {
     /* background-image: url('https://images.unsplash.com/photo-1557389352-e721da78ad9f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDg3fGJvOGpRS1RhRTBZfHxlbnwwfHx8fHw%3D'); */
-    background-image: url('/public\media\vector-JUL-2021-61.jpg');
-    height: 670px;
-    background-position: center;
+    height: 673px;
+    background-position: bottom right;
     background-size: cover;
-   
+    /* background-image: url('/public\media\vector-JUL-2021-61.jpg'); */
+   /*  background-image: linear-gradient(rgb(223, 235, 238),rgb(168, 192, 199),rgb(174, 187, 191)); */
+    background-color: rgb(236, 246, 249) ;
 }
 
 .btn-accesso {
-    background-color: green;
+    /* background-color: green; */
     width: 100%;
+    background-color: rgb(201, 230, 239);
 }
 
 .btn-accesso:hover{ 
-    background-color: rgb(0, 110, 0);
+    /* background-color: rgb(0, 110, 0); */
+    background-color: rgb(182, 226, 239);
 }
 
 .icona {
@@ -27,4 +34,21 @@
     left: 90%;
     bottom: 10px;
     cursor: pointer;
+}
+
+.form-control {
+
+    
+}
+.input-accesso:focus {
+    background: transparent;
+
+}
+
+.input-accesso {
+    border-left: solid 0px !important;
+    border-top: solid 0px !important;
+    border-right: solid 0px !important;
+    background-color: transparent;
+    border-bottom: solid 1px;
 }

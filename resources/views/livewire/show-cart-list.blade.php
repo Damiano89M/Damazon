@@ -1,17 +1,7 @@
 <div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Email</th>
-                <th scope="col">Articolo</th>
-                <th scope="col">Prezzo</th>
-                <th scope="col">Immagine</th>
-            </tr>
-        </thead>
+    <table class="table table-info tbody-cart">
         <tbody>
-            @foreach ($carts as $cart)
+            @forelse ($carts as $cart)
                 {{-- Condizione che un utente vede il proprio carrello o quello che lui carica --}}
                 @if (Auth::user() && $cart->user_id == Auth::user()->id)
                     <tr>
@@ -36,7 +26,9 @@
                         </td>
                     </tr>
                 @endif
-            @endforeach
+            @empty
+            <h2 class="text-center">Il tuo carrello è vuoto!</h2>
+            @endforelse
 
         </tbody>
     </table>

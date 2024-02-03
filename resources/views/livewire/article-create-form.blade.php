@@ -1,76 +1,82 @@
 <div>
-    <form class="p-5 form-accesso" wire:submit.prevent="store">
-        @csrf
-        @if (session('message'))
-            <div class="alert alert-success">
-                {{ session('message') }}
-            </div>
-        @endif
-        <div class="mb-3">
-            <label for="title" class="form-label">Titolo</label>
-            <input type="text" class="form-control" id="title" wire:model="title">
-        </div>
-        @error('title')
-            <div class="text-danger">{{ $message }}</div>
-        @enderror
-        <div class="mb-3">
-            <label for="description" class="form-label">Descrizione</label>
-            <input type="text" class="form-control" id="description" wire:model="description">
-        </div>
-        @error('description')
-            <div class="text-danger">{{ $message }}</div>
-        @enderror
-        <div class="mb-3">
-            <label class="form-label">Categorie</label>
-          <select class="form-select" wire:model="category_id">
-            <option value="">Scegli la categoria</option>
-            @foreach ($categories as $category )
-            <option value="{{ $category->id }}">{{ $category->name }}</option>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-7">
                 
-            @endforeach
-          </select>
-        </div>
-        @error('description')
-            <div class="text-danger">{{ $message }}</div>
-        @enderror
-        <div class="mb-3">
-            <label for="images" class="form-label">Immagini</label>
-            <input type="file" wire:model="temporary_images" multiple class="form-control @error('temporary_images.*')is-invalid @enderror" id="images" >
-        </div>
-        @error('temporary_images.*')
-            <div class="text-danger">{{ $message }}</div>
-        @enderror
-        @if (!empty($images))
-            <div class="row">
-                <div class="col-12">
-                    <p class="">photo preview</p>
+                <form id="form" class="p-5 form-create message" wire:submit.prevent="store">
+                    @if (session('message'))
+                        <div id="message" class="alert alert-success message">
+                            {{ session('message') }}
+                        </div>
+                    @endif
+                    @csrf
+
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Titolo</label>
+                        <input type="text" class="form-control" id="title" wire:model="title">
+                    </div>
+                    @error('title')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                    <div class="mb-3">
+                        <label class="form-label">Categorie</label>
+                        <select class="form-select" wire:model="category_id">
+                            <option value="">Scegli la categoria</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    @error('description')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                    <div class="mb-3">
+                        <label for="images" class="form-label">Immagini</label>
+                        <input type="file" wire:model="temporary_images" multiple
+                            class="form-control @error('temporary_images.*')is-invalid @enderror" id="images">
+                    </div>
+                    @error('temporary_images.*')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                    @error('image')
+                        <p class="text-danger fst-italic">{{ $message }}</p>
+                    @enderror
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Descrizione</label>
+                        <textarea class="form-control" id="description" cols="30" rows="5" wire:model="description"></textarea>
+                    </div>
+                    @error('description')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                    <div class="mb-3">
+                        <label class="from-label mb-2" for="price">Prezzo</label>
+                        <input type="float" class="form-control" id="price" wire:model="price">
+                    </div>
+                    @error('price')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                    <button type="submit" class="btn btn-form-create">Inserisci</button>
+                </form>
+            </div>
+            @if (!empty($images))
+
+                <div class="col-12 col-md-5 p-5 form-create">
+                    <p class="">Anteprima immagine</p>
                     <div class="row">
                         @foreach ($images as $key => $image)
-                            <div class="col">
-                               {{--  <div class="img-preview mx-auto shadow rounted"
+                            <div class="col-4 position-relative">
+                                {{--  <div class="img-preview mx-auto shadow rounted"
                                     style="background-image:url({{ $image->temporaryUrl() }})">
-
+        
                                 </div> --}}
-                                <img src="{{ $image->temporaryUrl() }}" alt="" class="img-fluid">
-                                <button type="button" class="btn"
+                                <img src="{{ $image->temporaryUrl() }}" alt="" class="img-fluid tag-img">
+                                <button type="button" class="btn btn-preview"
                                     wire:click="removeImage({{ $key }})">Cancella</button>
                             </div>
                         @endforeach
                     </div>
                 </div>
-            </div>
-
-        @endif 
-        @error('image')
-            <p class="text-danger fst-italic">{{ $message }}</p>
-        @enderror
-        <div class="mb-3">
-            <label class="from-label mb-2" for="price">Prezzo</label>
-            <input type="float" class="form-control" id="price" wire:model="price">
+            @endif
         </div>
-        @error('price')
-            <div class="text-danger">{{ $message }}</div>
-        @enderror
-        <button type="submit" class="btn btn-accesso">Inserisci</button>
-    </form>
+    </div>
 </div>

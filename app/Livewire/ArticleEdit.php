@@ -71,8 +71,8 @@ class ArticleEdit extends Component
 
             /* File::deleteDirectory(storage_path('app/livewire-tmp')); */
         }
-
         session()->flash('message', 'Articolo modificato con successo');
+        $this->redirectRoute('auth.profile');
         $this->reset();
     }
 

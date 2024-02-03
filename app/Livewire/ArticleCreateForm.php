@@ -92,6 +92,7 @@ class ArticleCreateForm extends Component
         }
 
         session()->flash('message', 'Articolo creato con successo');
+        $this->redirectRoute('auth.profile');
         $this->reset();
     }
 

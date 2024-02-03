@@ -1,0 +1,26 @@
+.tag-img {
+    height: 150px;
+}
+
+.form-create {
+    margin-top: 30px;
+    /* background-color: #393053; */
+    /* background-color: rgb(201, 230, 239); */
+    border-radius: 10px;
+    border: solid 1px #afafaf;
+   /*  box-shadow: 5px 5px 8px #888888; */
+}
+
+.btn-preview:hover{
+    border-bottom: solid 1px;
+}
+
+.btn-form-create {
+    background-color: rgb(201, 230, 239);
+    width: 100%;
+}
+
+.btn-form-create:hover{
+    background-color: rgb(182, 226, 239);
+
+}
