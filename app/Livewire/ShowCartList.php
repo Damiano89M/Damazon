@@ -13,7 +13,7 @@ class ShowCartList extends Component
     public function destroy(Cart $cart)
     {
         $cart->delete();
-    session()->flash('message', 'Articolo eliminato con successo');
+    session()->flash('message', 'Articolo rimosso dal carrello');
    
 }
 

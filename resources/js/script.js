@@ -101,7 +101,7 @@ setTimeout(function() {
     let form = document.getElementById('form');
     form.style.transition = "6.8s";
     form.style.transform = "translateY(-74px)";
-
+ 
 
 }, 4000);
 

@@ -27,8 +27,11 @@
                         @csrf
                     </form>
                 @else
-                    <a class="nav-link text-dark" href="{{ route('register') }}">Registrati</a>
-                    <a class="nav-link text-dark" href="{{ route('login') }}">Accedi</a>
+               
+                    
+                <a class="nav-link text-dark" href="{{ route('register') }}">Registrati</a>
+                <a class="nav-link text-dark" href="{{ route('login') }}">Accedi</a>
+                
                 @endauth
             </div>
         </div>
