@@ -1,5 +1,5 @@
 <div>
-    <table class="table table-info tbody-cart">
+    <table class="table table-light tbody-cart">
         <tbody>
             @forelse ($carts as $cart)
                 {{-- Condizione che un utente vede il proprio carrello o quello che lui carica --}}
@@ -19,6 +19,7 @@
                                 <img src="{{ asset('path/to/fallback-image.jpg') }}" alt="">
                             @endif
                         </td>
+                        <td>Q-{{ $cart->quantity }} </td>
                         <td>
                             <button class="btn apriModale" data-target="myModal{{ $cart->id }}"><i
                                     class="fa-regular fa-trash-can"></i>

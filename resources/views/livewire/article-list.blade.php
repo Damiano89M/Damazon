@@ -11,6 +11,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">Titolo</th>
                     <th scope="col">Prezzo</th>
+                    <th scope="col">Quantità</th>
                     <th scope="col">Azioni</th>
                 </tr>
             </thead>
@@ -21,6 +22,11 @@
                             <th scope="row">{{ $article->id }}</th>
                             <td>{{ $article->title }}</td>
                             <td>{{ $article->price }}€</td>
+                            @if ($article->quantity)
+                            <td>{{ $article->quantity }}</td>
+                            @else
+                            <td>-</td>
+                            @endif
                             <td>
                                 <button class="btn apriModale" data-target="myModal{{ $article->id }}"><i
                                         class="fa-regular fa-trash-can"></i>

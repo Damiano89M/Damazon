@@ -2,12 +2,6 @@
     width: 40px;
 }
 
-.img-show-cart:hover{
-    transform: scale(5);
-    transition: 0.5s;
-    
-}
-
 .tbody-cart {
     background: transparent !important;
 }

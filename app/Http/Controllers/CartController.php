@@ -40,8 +40,16 @@ class CartController extends Controller
                         } else {
                             $messaggio = "Prodotto terminato";
                             return view ('article.show', compact('article', 'messaggio'));
-                            
+                        } 
+                        
+                        // quantità non disponibile//
+                        if($article->quantity < $request->quantity) {
+                            $messaggio = "Quantità non disponibile";
+                            return view('article.show', compact('messaggio', 'article'));
                         }
+                            
+
+                        
 
                             //aggiornamento quantità//
                        /*  if ($article->quantity != null && $article->quantity >= $request->quantity) {
