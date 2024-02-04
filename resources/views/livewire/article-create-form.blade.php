@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-7">
-                
+
                 <form id="form" class="p-5 form-create message" wire:submit.prevent="store">
                     @if (session('message'))
                         <div id="message" class="alert alert-success message">
@@ -27,7 +27,11 @@
                             @endforeach
                         </select>
                     </div>
-                    @error('description')
+                    <div class="m-3">
+                        <label for="quantity" class="form-label">Quantità</label>
+                        <input type="number" class="form-control" min="1" id="quantity" wire:model="quantity">
+                    </div>
+                    @error('quantity')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                     <div class="mb-3">

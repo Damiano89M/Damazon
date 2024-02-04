@@ -44,7 +44,13 @@
                             @endif
                         </select>
                     </div>
-
+                    <div class="m-3">
+                        <label for="quantity" class="form-label">Quantità</label>
+                        <input type="number" class="form-control" min="1" id="quantity" wire:model="quantity">
+                    </div>
+                    @error('quantity')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
                     <div class="mb-3">
                         <label for="images" class="form-label">Immagini</label>
                         <input type="file" wire:model="temporary_images" multiple

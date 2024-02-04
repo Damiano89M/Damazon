@@ -22,6 +22,7 @@ class ArticleCreateForm extends Component
    /*  public $image; */
     public $article;
     public $category_id;
+    public $quantity;
   
     
     protected $rules = [
@@ -30,6 +31,7 @@ class ArticleCreateForm extends Component
         'images.*' => 'required|image|max:2000|mimes:webp,png,jpeg,jpg',
         'description' => 'required|min:10|max:10000',
         'price' => 'required|numeric',
+        'quantity' => 'required|numeric'
     ];
         
     protected $messages = [
@@ -75,6 +77,7 @@ class ArticleCreateForm extends Component
             'description' => $this->description,
             'price' => $this->price,
             'category_id' => $this->category_id,
+            'quantity' => $this->quantity,
             /* 'image' => $this->image->store('public/articles') */
         ]);
 

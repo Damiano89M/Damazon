@@ -19,6 +19,7 @@ class ArticleEdit extends Component
     public $category_id;
     public $temporary_images;
     public $old_images;
+    public $quantity;
 
     public function updatedTemporaryImages()
     {
@@ -56,6 +57,7 @@ class ArticleEdit extends Component
             'description' => $this->description,
             'price' => $this->price,
             'category_id' => $this->category_id,
+            'quantity' => $this->quantity
         ]);
 
         
@@ -84,6 +86,7 @@ class ArticleEdit extends Component
         $this->category_id = $this->article->category_id;
         $this->old_images = Image::where('article_id', $this->article->id)->get();
         $this->temporary_images = $this->old_images;
+        $this->quantity = $this->article->quantity;
     }
     public function render()
     {

@@ -1,8 +1,13 @@
 <x-layout>
     <div class="container p-5">
-        @if (session('message'))
-            <div class="alert alert-success">
+        @if  (session('message'))
+            <div id="message" class="alert alert-success">
                 {{ session('message') }}
+            </div>
+        @endif
+        @if (isset($messaggio))
+            <div id="message" class="alert alert-info">
+                {{ $messaggio }}
             </div>
         @endif
         <div class="row">
@@ -12,7 +17,8 @@
                         <div class="carousel-inner carousss">
                             @foreach ($article->images as $image)
                                 <div class="carousel-item div-img-show @if ($loop->first) active @endif">
-                                    <img src="{{ Storage::url($image->path) }}" class="img-fluid img-show" alt="...">
+                                    <img src="{{ Storage::url($image->path) }}" class="img-fluid img-show"
+                                        alt="...">
                                 </div>
                             @endforeach
                         </div>
@@ -40,6 +46,7 @@
                 <form action="{{ route('article.addToCart', $article) }}" method="POST">
                     @csrf
                     <button type="submit" class="btn btn-primary">Aggiungi al carrello</button>
+                    <input type="number" name="quantity" min="1" value="1" class="form-control mt-3">
                 </form>
             </div>
 

@@ -16,7 +16,7 @@ class CartController extends Controller
         $this->middleware('auth');
     }
 
-    public function addToCart(Article $article)
+    public function addToCart(Article $article, Request $request)
     {
 
         if (Auth::id()) {
@@ -32,6 +32,33 @@ class CartController extends Controller
                 $cart->price = $article->price;
                 $cart->article_id = $article->id;
                 $cart->images_id = $article->images->first()->id;
+
+                        //se il prodotto è terminato//
+                        if($article->quantity != null) {
+
+                            $cart->quantity = $request->quantity;
+                        } else {
+                            $messaggio = "Prodotto terminato";
+                            return view ('article.show', compact('article', 'messaggio'));
+                            
+                        }
+
+                            //aggiornamento quantità//
+                       /*  if ($article->quantity != null && $article->quantity >= $request->quantity) {
+                            $cart->quantity = $request->quantity;
+                    
+                            // Aggiorna la quantità disponibile in magazzino
+                            $article->quantity -= $request->quantity;
+                            $article->save();
+                            
+                            // Salva il carrello
+                            $cart->save();
+                    
+                            return redirect()->back()->with('message', 'Articolo aggiunto al carrello');
+                        } else {
+                            $messaggio = "Quantità non disponibile";
+                            return view('article.show', compact('messaggio', 'article'));
+                        } */
 
                 // Salva il carrello
                 $cart->save();

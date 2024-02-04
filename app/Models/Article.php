@@ -14,7 +14,7 @@ class Article extends Model
 {
     use HasFactory, Searchable;
 
-    protected $fillable = ['title', 'description', 'price', 'category_id'];
+    protected $fillable = ['title', 'description', 'price', 'category_id', 'quantity'];
 
     public function toSearchableArray()
     {
