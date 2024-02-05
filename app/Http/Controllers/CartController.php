@@ -32,6 +32,7 @@ class CartController extends Controller
                 $cart->price = $article->price;
                 $cart->article_id = $article->id;
                 $cart->images_id = $article->images->first()->id;
+                $cart->article_description = $article->description;
 
                         //se il prodotto è terminato//
                         if($article->quantity != null) {
@@ -47,10 +48,7 @@ class CartController extends Controller
                             $messaggio = "Quantità non disponibile";
                             return view('article.show', compact('messaggio', 'article'));
                         }
-                            
-
-                        
-
+                
                             //aggiornamento quantità//
                        /*  if ($article->quantity != null && $article->quantity >= $request->quantity) {
                             $cart->quantity = $request->quantity;

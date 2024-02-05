@@ -1,0 +1,17 @@
+.carrello {
+    height: auto;
+    width: 100%;
+    border: solid 1px;
+    padding: 10px;
+}
+
+.img-show-cart {
+    width: 180px;
+}
+
+.tbody-cart {
+    background: transparent !important;
+}
+/* .div-h4 {
+    border-bottom: solid 1px;
+} */

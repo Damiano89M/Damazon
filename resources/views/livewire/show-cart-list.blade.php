@@ -1,9 +1,9 @@
 <div>
-    <table class="table table-light tbody-cart">
+   {{--  <table class="table table-light tbody-cart">
         <tbody>
             @forelse ($carts as $cart)
                 {{-- Condizione che un utente vede il proprio carrello o quello che lui carica --}}
-                @if (Auth::user() && $cart->user_id == Auth::user()->id)
+                {{--  @if (Auth::user() && $cart->user_id == Auth::user()->id)
                     <tr>
                         <th scope="row">{{ $cart->id }}</th>
                         <td>{{ $cart->name }}</td>
@@ -19,7 +19,7 @@
                                 <img src="{{ asset('path/to/fallback-image.jpg') }}" alt="">
                             @endif
                         </td>
-                        <td>Q-{{ $cart->quantity }} </td>
+                        <td>Q.tà: {{ $cart->quantity }} </td>
                         <td>
                             <button class="btn apriModale" data-target="myModal{{ $cart->id }}"><i
                                     class="fa-regular fa-trash-can"></i>
@@ -28,11 +28,47 @@
                     </tr>
                 @endif
             @empty
-            <h2 class="text-center">Il tuo carrello è vuoto!</h2>
+                <h2 class="text-center">Il tuo carrello è vuoto!</h2>
             @endforelse
 
         </tbody>
-    </table>
+    </table> --}}
+    <div class="carrello">
+        <div class="div-h4">
+            <h4>Carrello</h4>
+            <hr>
+        </div>
+        @forelse ($carts as $cart)
+            {{-- Condizione che un utente vede il proprio carrello o quello che lui carica --}}
+            @if (Auth::user() && $cart->user_id == Auth::user()->id)
+                <div class="row mb-3">
+                    {{-- <div class="col-2">{{ $cart->id }}</div> --}}
+                    <div class="col-2">
+                        @if ($cart->article && $cart->article->images && !$cart->article->images->isEmpty())
+                            <img class="img-fluid img-show-cart"
+                                src="{{ Storage::url($cart->article->images->first()->path) }}" alt="">
+                        @else
+                            <!-- Immagine di fallback o nessuna immagine -->
+                            <img src="{{ asset('path/to/fallback-image.jpg') }}" alt="">
+                        @endif
+                    </div>
+                    <div class="col-4">{{ $cart->article_description }}</div>
+                    {{-- <div class="col-2">{{ $cart->email }}</div> --}}
+                    <div class="col-1">{{ $cart->article->title }}</div>
+                    <div class="col-1">{{ $cart->article->price }}€</div>
+                    <div class="col-1">Q.ntà:{{ $cart->quantity }}</div>
+                    <div class="col-1">
+                        <button class="btn apriModale" data-target="myModal{{ $cart->id }}"><i
+                                class="fa-regular fa-trash-can"></i>
+                        </button>
+                    </div>
+                </div>
+            @endif
+        @empty
+            <h2 class="text-center">Il tuo carrello è vuoto!</h2>
+        @endforelse
+    </div>
+
     <!-- Modale fuori dal ciclo -->
     <div class="container">
         <div class="row">
