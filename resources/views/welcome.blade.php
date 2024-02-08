@@ -43,5 +43,18 @@
                 <h3 class="text-center">Non ci sono articoli <a href="{{ route('article.create') }}">Inseriscine uno!</a></h3>
             @endforelse
             </div>
+            
+          {{--   <div class="row justify-content-center row-card-home">
+                @forelse ($category_musica as $musica )
+            <div class="col-12 col-md-2 mt-md-2 ">
+                <x-card :article="$article" />
+            </div>
+                
+            @empty
+                <h3 class="text-center">Non ci sono articoli <a href="{{ route('article.create') }}">Inseriscine uno!</a></h3>
+            @endforelse
+            </div> --}}
+
+            
         </div>
 </x-layout>

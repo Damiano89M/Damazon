@@ -63,6 +63,7 @@
                         </button>
                     </div>
                 </div>
+                <hr>
             @endif
         @empty
             <h2 class="text-center">Il tuo carrello è vuoto!</h2>

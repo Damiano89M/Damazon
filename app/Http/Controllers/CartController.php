@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 
 class CartController extends Controller
 {
+    
     public function __construct()
     {
         $this->middleware('auth');
@@ -67,8 +68,9 @@ class CartController extends Controller
                         } */
 
                 // Salva il carrello
-                $cart->save();
 
+                $cart->save();
+                
                 return redirect()->back()->with('message', 'Articolo aggiunto al carrello');
             } else {
                 // Gestisci il caso in cui l'articolo non esiste

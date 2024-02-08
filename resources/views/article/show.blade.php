@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container p-5">
+    <div class="container container-show">
         @if  (session('message'))
             <div id="message" class="alert alert-success">
                 {{ session('message') }}
@@ -11,8 +11,8 @@
             </div>
         @endif
         <div class="row">
-            <div class="col-12 col-md-8">
-                <div id="showCarousel" class="carousel">
+            <div class="col-12 col-md-5">
+                <div id="showCarousel" class="carousel ">
                     @if ($article->images)
                         <div class="carousel-inner carousss">
                             @foreach ($article->images as $image)
@@ -23,33 +23,48 @@
                             @endforeach
                         </div>
                     @endif
-                    <button class="carousel-control-prev" type="button" data-bs-target="#showCarousel"
+                    <button class="carousel-control-prev btn-carousel" type="button" data-bs-target="#showCarousel"
                         data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">{{ __('ui.precedente') }}</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#showCarousel"
+                    <button class="carousel-control-next btn-carousel" type="button" data-bs-target="#showCarousel"
                         data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">{{ __('ui.successivo') }}</span>
                     </button>
                 </div>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 div-dati-show">
                 <h3>{{ $article->title }}</h3>
-                <p>{{ $article->description }}</p>
-                <p>{{ $article->price }}</p>
+                
+                <p>{{ $article->price }}€</p>
                 <p>{{ $article->created_at->translatedFormat('D d/m/y') }}</p>
                 <p>{{ Auth::user()->name ?? 'Non specificato' }}</p>
                 <p class="card-text colonna-2">{{ $article->created_at->diffForHumans() }}</p>
 
-                <form action="{{ route('article.addToCart', $article) }}" method="POST">
+                <form action="{{ route('article.addToCart', $article) }}" method="POST" class="row">
                     @csrf
-                    <button type="submit" class="btn btn-primary">Aggiungi al carrello</button>
-                    <input type="number" name="quantity" min="1" value="1" class="form-control mt-3">
+                    <div class="col-12 col-md-3 d-flex">
+                        <input type="number" name="quantity" min="1" value="1" class="form-control input-show">
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <button type="submit" class="btn btn-warning">Aggiungi al carrello</button>
+                    </div>
                 </form>
             </div>
 
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3>Descrizione</h3>
+                <hr style="border-style: dashed">
+            </div>
+            <div class="col-6 fascia-separazione">
+                <p>{{ $article->description }}</p>
+            </div>
         </div>
     </div>
 </x-layout>

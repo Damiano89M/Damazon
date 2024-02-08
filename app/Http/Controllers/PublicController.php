@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class PublicController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('homepage');
     }
    public function searchArticle(request $request) {
     $minprice = $request->input('min_price', 0);
@@ -22,10 +23,14 @@ class PublicController extends Controller
 
     return view('article.index', compact('articles'));
    }
+
     public function homepage()
     {
         $articles = Article::orderBy('created_at', 'desc')->take(5)->get();
-        return view('welcome', compact('articles'));
+
+        /* $category_musica = Category::where('name','=', 'Musica')->get(); */
+        
+        return view('welcome', compact('articles', 'category_musica'));
     }
 
     public function profile() {
