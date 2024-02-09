@@ -33,7 +33,7 @@
                     <div class="mt-3">
                         <span>Non sei ancora registrato? <a href="{{ route('register') }}">Registrati</a></span>
                     </div>
-                    <div class="mt-3">
+                    <div class="mt-3 text-center">
                         <span><a href="{{ route('password.request') }}">hai dimenticato la password? </a></span>
                     </div>
                 </form>

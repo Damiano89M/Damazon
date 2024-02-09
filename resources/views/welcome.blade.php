@@ -3,8 +3,9 @@
         {{-- Categorie --}}
         <div class="row">
             <div class="col-12 d-flex justify-content-center col-categorie">
-                @foreach ($categories as $category )
-                    <a class="mx-2 text-center categorie p-2" href="{{ route('article.indexCategory', $category)}}">{{ $category->name }}</a>
+                @foreach ($categories as $category)
+                    <a class="mx-2 text-center categorie p-2"
+                        href="{{ route('article.indexCategory', $category) }}">{{ $category->name }}</a>
                 @endforeach
             </div>
         </div>
@@ -12,7 +13,7 @@
         <div class="row mt-2 bg-header">
             <div class="col-12 div-head text-center">
                 <h2 class="p-4">Comincia a guadagnare con il tuo usato!</h2>
-               <a class="btn btn-div-head" href="{{ route('article.create') }}">Inizia a vendere</a>
+                <a class="btn btn-div-head" href="{{ route('article.create') }}">Inizia a vendere</a>
             </div>
         </div>
         <div class="row my-4 mt-5">
@@ -30,31 +31,227 @@
 
         </div>
     </div>
-        <div class="container">
+    <div class="container">
 
-            {{-- Card --}}
-            <div class="row justify-content-center row-card-home">
-                @forelse ($articles as $article )
-            <div class="col-12 col-md-2 mt-md-2 ">
-                <x-card :article="$article" />
-            </div>
-                
-            @empty
-                <h3 class="text-center">Non ci sono articoli <a href="{{ route('article.create') }}">Inseriscine uno!</a></h3>
-            @endforelse
-            </div>
-            
-          {{--   <div class="row justify-content-center row-card-home">
-                @forelse ($category_musica as $musica )
-            <div class="col-12 col-md-2 mt-md-2 ">
-                <x-card :article="$article" />
-            </div>
-                
-            @empty
-                <h3 class="text-center">Non ci sono articoli <a href="{{ route('article.create') }}">Inseriscine uno!</a></h3>
-            @endforelse
-            </div> --}}
+        {{-- Tutti gli annunci --}}
+        <div class="row justify-content-center row-card-home">
+            @forelse ($articles as $article)
+                <div class="col-12 col-md-2 mt-md-2 ">
+                    <x-card :article="$article" />
+                </div>
 
-            
+            @empty
+                <h3 class="text-center">Non ci sono articoli <a href="{{ route('article.create') }}">Inseriscine
+                        uno!</a></h3>
+            @endforelse
         </div>
+
+        <hr>
+    </div>
+    {{-- Tutti gli annunci elettronica --}}
+    <div class="container">
+        <div class="row justify-content-center row-card-home">
+            <h3 class="ms-4 my-3"> Tutto elettronica</h3>
+
+            @forelse ($category_elettronica->articles as $article)
+                <div class="col-12 col-md-2 mt-md-2 ">
+                    <x-card :article="$article" />
+                </div>
+
+            @empty
+                <h3 class="text-center">Non ci sono articoli <a href="{{ route('article.create') }}">Inseriscine
+                        uno!</a></h3>
+            @endforelse
+        </div>
+
+        <hr>
+    </div>
+    {{-- Tutti gli annunci informatica --}}
+
+    <div class="container">
+        <div class="row justify-content-center row-card-home">
+            <h3 class="ms-4 my-3">Tutto informatica</h3>
+
+            @forelse ($category_informatica->articles as $article)
+                <div class="col-12 col-md-2 mt-md-2 ">
+                    <x-card :article="$article" />
+                </div>
+
+            @empty
+                <h3 class="text-center">Non ci sono articoli <a href="{{ route('article.create') }}">Inseriscine
+                        uno!</a></h3>
+            @endforelse
+        </div>
+        <hr>
+    </div>
+    {{-- Tutti gli annunci telefonia --}}
+    <div class="container">
+        <div class="row justify-content-center row-card-home">
+            <h3 class="ms-4 my-3">Tutto telefonia</h3>
+
+            @forelse ($category_telefonia->articles as $article)
+                <div class="col-12 col-md-2 mt-md-2 ">
+                    <x-card :article="$article" />
+                </div>
+
+            @empty
+                <h3 class="text-center">Non ci sono articoli <a href="{{ route('article.create') }}">Inseriscine
+                        uno!</a></h3>
+            @endforelse
+        </div>
+        <hr>
+    </div>
+    {{-- Tutti gli annunci moda uomo --}}
+    <div class="container">
+        <div class="row justify-content-center row-card-home">
+            <h3 class="ms-4 my-3">Tutto moda uomo</h3>
+
+            @forelse ($category_moda_uomo->articles as $article)
+                <div class="col-12 col-md-2 mt-md-2 ">
+                    <x-card :article="$article" />
+                </div>
+
+            @empty
+                <h3 class="text-center">Non ci sono articoli <a href="{{ route('article.create') }}">Inseriscine
+                        uno!</a></h3>
+            @endforelse
+        </div>
+        <hr>
+    </div>
+    {{-- Tutti gli annunci moda donna --}}
+    <div class="container">
+        <div class="row justify-content-center row-card-home">
+            <h3 class="ms-4 my-3">Tutto moda donna</h3>
+
+            @forelse ($category_moda_donna->articles as $article)
+                <div class="col-12 col-md-2 mt-md-2 ">
+                    <x-card :article="$article" />
+                </div>
+
+            @empty
+                <h3 class="text-center">Non ci sono articoli <a href="{{ route('article.create') }}">Inseriscine
+                        uno!</a></h3>
+            @endforelse
+        </div>
+        <hr>
+    </div>
+    {{-- Tutti gli annunci moda bambino --}}
+    <div class="container">
+        <div class="row justify-content-center row-card-home">
+            <h3 class="ms-4 my-3">Tutto moda bambino</h3>
+
+            @forelse ($category_moda_bambino->articles as $article)
+                <div class="col-12 col-md-2 mt-md-2 ">
+                    <x-card :article="$article" />
+                </div>
+
+            @empty
+                <h3 class="text-center">Non ci sono articoli <a href="{{ route('article.create') }}">Inseriscine
+                        uno!</a></h3>
+            @endforelse
+        </div>
+        <hr>
+    </div>
+    {{-- Tutti gli annunci moda bambina --}}
+    <div class="container">
+        <div class="row justify-content-center row-card-home">
+            <h3 class="ms-4 my-3">Tutto moda bambina</h3>
+
+            @forelse ($category_moda_bambina->articles as $article)
+                <div class="col-12 col-md-2 mt-md-2 ">
+                    <x-card :article="$article" />
+                </div>
+
+            @empty
+                <h3 class="text-center">Non ci sono articoli <a href="{{ route('article.create') }}">Inseriscine
+                        uno!</a></h3>
+            @endforelse
+        </div>
+        <hr>
+    </div>
+    {{-- Tutti gli annunci prima infanzia --}}
+    <div class="container">
+        <div class="row justify-content-center row-card-home">
+            <h3 class="ms-4 my-3">Tutto prima infanzia</h3>
+
+            @forelse ($category_prima_infanzia->articles as $article)
+                <div class="col-12 col-md-2 mt-md-2 ">
+                    <x-card :article="$article" />
+                </div>
+
+            @empty
+                <h3 class="text-center">Non ci sono articoli <a href="{{ route('article.create') }}">Inseriscine
+                        uno!</a></h3>
+            @endforelse
+        </div>
+        <hr>
+    </div>
+    {{-- Tutti gli annunci casa e cucina --}}
+    <div class="container">
+        <div class="row justify-content-center row-card-home">
+            <h3 class="ms-4 my-3">Tutto casa e cucina</h3>
+
+            @forelse ($category_casa_e_cucina->articles as $article)
+                <div class="col-12 col-md-2 mt-md-2 ">
+                    <x-card :article="$article" />
+                </div>
+
+            @empty
+                <h3 class="text-center">Non ci sono articoli <a href="{{ route('article.create') }}">Inseriscine
+                        uno!</a></h3>
+            @endforelse
+        </div>
+        <hr>
+    </div>
+    {{-- Tutti gli annunci giochi --}}
+    <div class="container">
+        <div class="row justify-content-center row-card-home">
+            <h3 class="ms-4 my-3">Tutto giochi</h3>
+
+            @forelse ($category_giochi->articles as $article)
+                <div class="col-12 col-md-2 mt-md-2 ">
+                    <x-card :article="$article" />
+                </div>
+
+            @empty
+                <h3 class="text-center">Non ci sono articoli <a href="{{ route('article.create') }}">Inseriscine
+                        uno!</a></h3>
+            @endforelse
+        </div>
+        <hr>
+    </div>
+    {{-- Tutti gli annunci giocattoli --}}
+    <div class="container">
+        <div class="row justify-content-center row-card-home">
+            <h3 class="ms-4 my-3">Tutto giocattoli</h3>
+
+            @forelse ($category_giocattoli->articles as $article)
+                <div class="col-12 col-md-2 mt-md-2 ">
+                    <x-card :article="$article" />
+                </div>
+
+            @empty
+                <h3 class="text-center">Non ci sono articoli <a href="{{ route('article.create') }}">Inseriscine
+                        uno!</a></h3>
+            @endforelse
+        </div>
+        <hr>
+    </div>
+    {{-- Tutti gli annunci musica --}}
+    <div class="container">
+        <div class="row justify-content-center row-card-home">
+            <h3 class="ms-4 my-3">Tutto musica</h3>
+
+            @forelse ($category_musica->articles as $article)
+                <div class="col-12 col-md-2 mt-md-2 ">
+                    <x-card :article="$article" />
+                </div>
+
+            @empty
+                <h3 class="text-center">Non ci sono articoli <a href="{{ route('article.create') }}">Inseriscine
+                        uno!</a></h3>
+            @endforelse
+        </div>
+        <hr>
+    </div>
 </x-layout>
