@@ -1,3 +1,5 @@
+@if (Route::CurrentRouteName() != 'password.reset' && Route::CurrentRouteName() != 'password.update')
+    
 <nav class="navbar navbar-expand-lg bg-nav">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('homepage') }}">Damazon</a>
@@ -11,8 +13,8 @@
                 <button class="btn btn-outline-success" type="submit">Cerca</button>
             </form>
         </div>
-        <div class="collapse navbar-collapse justify-content-end interazioni" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
+        <div class="collapse navbar-collapse justify-content-end azioni" id="navbarNavAltMarkup">
+            <div class="navbar-nav ">
                 @auth
                     <a class="nav-link text-dark" aria-current="page" href="{{ route('auth.profile') }}">{{ Auth::user()->name }}</a>
                     <a class="nav-link text-dark" aria-current="page" href="{{ route('homepage') }}">Home</a>
@@ -37,3 +39,4 @@
         </div>
     </div>
 </nav>
+@endif

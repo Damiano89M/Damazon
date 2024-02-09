@@ -30,7 +30,7 @@ class PublicController extends Controller
 
         /* $category_musica = Category::where('name','=', 'Musica')->get(); */
         
-        return view('welcome', compact('articles', 'category_musica'));
+        return view('welcome', compact('articles'/* , 'category_musica' */));
     }
 
     public function profile() {

@@ -52,11 +52,14 @@ class FortifyServiceProvider extends ServiceProvider
         });
         //forgot//
         Fortify::requestPasswordResetLinkView(function () {
-          
+            
+           
             return view('auth.forgot-password');
             });
         //reset//
         Fortify::resetPasswordView(function (Request $request) {
+
+            
             return view('auth.reset-password', ['request' => $request]);
         });
     }
