@@ -24,6 +24,11 @@ h5 {
     top: 345px;
     left: 0;
 }
+.p-discount_price {
+    position: absolute;
+    top: 345px;
+    left: 50px;
+}
 .p3 {
     position: absolute;
     top: 365px;

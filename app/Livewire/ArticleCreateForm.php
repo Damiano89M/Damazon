@@ -17,6 +17,7 @@ class ArticleCreateForm extends Component
     public $title;
     public $description;
     public $price;
+    public $discount_price;
     public $temporary_images;
     public $images = [];
    /*  public $image; */
@@ -76,6 +77,7 @@ class ArticleCreateForm extends Component
             'title' => $this->title,
             'description' => $this->description,
             'price' => $this->price,
+            'discount_price' => $this->discount_price,
             'category_id' => $this->category_id,
             'quantity' => $this->quantity,
             /* 'image' => $this->image->store('public/articles') */

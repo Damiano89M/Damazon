@@ -14,6 +14,7 @@ class ArticleEdit extends Component
     public $title;
     public $description;
     public $price;
+    public $discount_price;
     public $images = [];
     public $image;
     public $category_id;
@@ -56,6 +57,7 @@ class ArticleEdit extends Component
             'title' => $this->title,
             'description' => $this->description,
             'price' => $this->price,
+            'discount_price' => $this->discount_price,
             'category_id' => $this->category_id,
             'quantity' => $this->quantity
         ]);
@@ -83,6 +85,7 @@ class ArticleEdit extends Component
         $this->title = $this->article->title;
         $this->description = $this->article->description;
         $this->price = $this->article->price;
+        $this->discount_price = $this->article->discount_price;
         $this->category_id = $this->article->category_id;
         $this->old_images = Image::where('article_id', $this->article->id)->get();
         $this->temporary_images = $this->old_images;

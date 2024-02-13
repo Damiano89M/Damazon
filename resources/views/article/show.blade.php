@@ -38,7 +38,19 @@
             <div class="col-12 col-md-4 div-dati-show">
                 <h3>{{ $article->title }}</h3>
                 
-                <p>{{ $article->price }}€</p>
+                <div class="d-flex">
+                    @if ($article->discount_price)
+                    
+                    <p class="card-text text-danger">
+                        <del>{{ $article->price }}€</del>
+                    </p>
+                    <p class="card-text text-success ms-2">
+                        {{ $article->discount_price }}€
+                    </p>
+                    @else
+                    <p class="card-text p2">{{ $article->price }}€</p>
+                    @endif
+                </div>
                 <p>{{ $article->created_at->translatedFormat('D d/m/y') }}</p>
                 <p>{{ Auth::user()->name ?? 'Non specificato' }}</p>
                 <p class="card-text colonna-2">{{ $article->created_at->diffForHumans() }}</p>

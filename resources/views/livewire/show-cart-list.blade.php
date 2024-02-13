@@ -54,8 +54,8 @@
                     </div>
                     <div class="col-4">{{ $cart->article_description }}</div>
                     {{-- <div class="col-2">{{ $cart->email }}</div> --}}
-                    <div class="col-1">{{ $cart->article->title }}</div>
-                    <div class="col-1">{{ $cart->article->price }}€</div>
+                    <div class="col-1">{{ $cart->article_title }}</div>
+                    <div class="col-1">{{ $cart->price }}€</div>
                     <div class="col-1">Q.ntà:{{ $cart->quantity }}</div>
                     <div class="col-1">
                         <button class="btn apriModale" data-target="myModal{{ $cart->id }}"><i

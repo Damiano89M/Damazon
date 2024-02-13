@@ -59,6 +59,13 @@
                     @error('price')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
+                    <div class="mb-3">
+                        <label class="from-label mb-2" for="discount_price">Prezzo scontato</label>
+                        <input type="float" class="form-control" id="discount_price" wire:model="discount_price">
+                    </div>
+                    @error('price')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
                     <button type="submit" class="btn btn-form-create">Inserisci</button>
                 </form>
             </div>

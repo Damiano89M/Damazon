@@ -30,7 +30,14 @@ class CartController extends Controller
                 $cart->email = $user->email;
                 $cart->user_id = $user->id;
                 $cart->article_title = $article->title;
-                $cart->price = $article->price;
+
+                if($article->discount_price != null) {
+                    $cart->price = $article->discount_price * $request->quantity;   
+                } else {
+
+                    $cart->price = $article->price * $request->quantity;
+                }
+
                 $cart->article_id = $article->id;
                 $cart->images_id = $article->images->first()->id;
                 $cart->article_description = $article->description;

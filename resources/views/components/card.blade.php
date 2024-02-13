@@ -7,7 +7,19 @@
         <div class="card-body">
             <h5 class="card-title">{{ Str::limit($article->title, '10') }}</h5>
             <p class="card-text p1">{{ Str::limit($article->description, '20') }}</p>
-            <p class="card-text p2">{{ $article->price }}€</p>
+            <div class="d-flex">
+                @if ($article->discount_price)
+                
+                <p class="card-text p2 text-danger">
+                    <del>{{ $article->price }}€</del>
+                </p>
+                <p class="card-text p-discount_price text-success">
+                    {{ $article->discount_price }}€
+                </p>
+                @else
+                <p class="card-text p2">{{ $article->price }}€</p>
+                @endif
+            </div>
             <p class="card-text p3"> {{ $article->category->name ?? 'categoria non specificata' }}</p>
           
           
