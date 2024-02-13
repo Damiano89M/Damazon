@@ -21,7 +21,21 @@
                         <tr>
                             <th scope="row">{{ $article->id }}</th>
                             <td>{{ $article->title }}</td>
-                            <td>{{ $article->price }}€</td>
+                            <td>
+                                <div class="d-flex">
+                                    @if ($article->discount_price)
+                                    
+                                    <p class="card-text text-danger">
+                                        <del>{{ $article->price }}€</del>
+                                    </p>
+                                    <p class="card-text text-success ms-2">
+                                        {{ $article->discount_price }}€
+                                    </p>
+                                    @else
+                                    <p class="card-text">{{ $article->price }}€</p>
+                                    @endif
+                                </div>
+                            </td>
                             @if ($article->quantity)
                             <td>{{ $article->quantity }}</td>
                             @else
