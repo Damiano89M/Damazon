@@ -10,15 +10,15 @@
                 {{ $messaggio }}
             </div>
         @endif
-        <div class="row">
-            <div class="col-12 col-md-5">
-                <div id="showCarousel" class="carousel ">
+        <div class="row" id="form">
+            <div class="col-12 col-md-7">
+                <div id="showCarousel" class="carousel">
                     @if ($article->images)
                         <div class="carousel-inner carousss">
                             @foreach ($article->images as $image)
                                 <div class="carousel-item div-img-show @if ($loop->first) active @endif">
                                     <img src="{{ Storage::url($image->path) }}" class="img-fluid img-show"
-                                        alt="...">
+                                        alt="immagini degli articoli">
                                 </div>
                             @endforeach
                         </div>
@@ -41,21 +41,21 @@
                 <div class="d-flex">
                     @if ($article->discount_price)
                     
-                    <p class="card-text text-danger">
+                    <p class="card-text text-danger price_show">
                         <del>{{ $article->price }}€</del>
                     </p>
-                    <p class="card-text text-success ms-2">
+                    <p class="card-text text-success ms-2 price_show">
                         {{ $article->discount_price }}€
                     </p>
                     @else
-                    <p class="card-text p2">{{ $article->price }}€</p>
+                    <p class="card-text price_show">{{ $article->price }}€</p>
                     @endif
                 </div>
                 <p>{{ $article->created_at->translatedFormat('D d/m/y') }}</p>
                 <p>{{ Auth::user()->name ?? 'Non specificato' }}</p>
                 <p class="card-text colonna-2">{{ $article->created_at->diffForHumans() }}</p>
-
-                <form action="{{ route('article.addToCart', $article) }}" method="POST" class="row">
+                <p class="card-text colonna-2">{{ $article->category->name}}</p>
+                <form action="{{ route('article.addToCart', $article) }}" method="POST" class="row mb-3">
                     @csrf
                     <div class="col-12 col-md-3 d-flex">
                         <input type="number" name="quantity" min="1" value="1" class="form-control input-show">
@@ -64,6 +64,7 @@
                         <button type="submit" class="btn btn-warning">Aggiungi al carrello</button>
                     </div>
                 </form>
+                <span>Qnt.à disponibile: {{ $article->quantity }}</span>
             </div>
 
         </div>

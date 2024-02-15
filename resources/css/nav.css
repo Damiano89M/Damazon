@@ -6,6 +6,13 @@
 }
 
 .azioni {
-    width: 0px;
+    width: 0px ;
+}
+
+/* .dropdown-menu {
+    background-color:rgb(201, 230, 239);
+} */
+.nav-link:hover {
+    background-color:rgb(201, 230, 239);
 }
 

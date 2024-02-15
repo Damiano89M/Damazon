@@ -19,4 +19,33 @@
     padding-right: 100px; */
 }
 
+.watch {
+    opacity: 0;
+    margin-top: 100px;
+    transition: all 1s cubic-bezier(.215, .61, .355, 1);
+}
+
+.in-page {
+    opacity: 1;
+    margin-top: 0;
+    
+}
+
+.row-watch {
+    height: 250px;
+    background-image: url('/public\media\vecteezy_businessman-holding-global-internet-connection-technology_7252575.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+.h2-watch {
+    font-family: cursive;
+    font-size: 50px;
+    background-image: linear-gradient(to right, rgb(201, 230, 239), rgb(135, 213, 237));
+    -webkit-background-clip: text; /* Safari/Chrome */
+    background-clip: text;
+    color: transparent;
+}
+
 

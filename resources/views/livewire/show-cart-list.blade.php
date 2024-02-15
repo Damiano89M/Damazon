@@ -41,7 +41,7 @@
         @forelse ($carts as $cart)
             {{-- Condizione che un utente vede il proprio carrello o quello che lui carica --}}
             @if (Auth::user() && $cart->user_id == Auth::user()->id)
-                <div class="row mb-3">
+                <div class="row mb-3 rowCart">
                     {{-- <div class="col-2">{{ $cart->id }}</div> --}}
                     <div class="col-2">
                         @if ($cart->article && $cart->article->images && !$cart->article->images->isEmpty())
@@ -52,18 +52,18 @@
                             <img src="{{ asset('path/to/fallback-image.jpg') }}" alt="">
                         @endif
                     </div>
+                    <div class="col-2">{{ $cart->article_title }}</div>
                     <div class="col-4">{{ $cart->article_description }}</div>
                     {{-- <div class="col-2">{{ $cart->email }}</div> --}}
-                    <div class="col-1">{{ $cart->article_title }}</div>
                     <div class="col-1">{{ $cart->price }}€</div>
                     <div class="col-1">Q.ntà:{{ $cart->quantity }}</div>
                     <div class="col-1">
                         <button class="btn apriModale" data-target="myModal{{ $cart->id }}"><i
-                                class="fa-regular fa-trash-can"></i>
+                                class="fa-regular fa-trash-can text-danger"></i>
                         </button>
                     </div>
                 </div>
-                <hr>
+                
             @endif
         @empty
             <h2 class="text-center">Il tuo carrello è vuoto!</h2>

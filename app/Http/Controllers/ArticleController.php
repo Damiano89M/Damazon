@@ -21,6 +21,7 @@ class ArticleController extends Controller
     {
         /* $articles = Article::paginate(10); */
         $articles = Article::orderBy('created_at', 'desc')->paginate(30);
+        
         return view('article.index', compact('articles'));
     }
 
@@ -49,8 +50,8 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-
-        return view('article.show', compact('article'));
+        $category_giochi = Category::where('name','=', 'Giochi')->first();
+        return view('article.show', compact('article', 'category_giochi'));
     }
 
     /**

@@ -10,24 +10,45 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
             <form action="{{ route('article.search') }}" method="GET" class="d-flex w-75" role="search">
                 <input name="searched" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Cerca</button>
+                {{-- <button class="btn btn-outline-success" type="submit">Cerca</button> --}}
             </form>
         </div>
         <div class="collapse navbar-collapse justify-content-end azioni" id="navbarNavAltMarkup">
             <div class="navbar-nav ">
                 @auth
-                    <a class="nav-link text-dark" aria-current="page" href="{{ route('auth.profile') }}">{{ Auth::user()->name }}</a>
-                    <a class="nav-link text-dark" aria-current="page" href="{{ route('homepage') }}">Home</a>
-                    <a class="nav-link text-dark" aria-current="page" href="{{ Route('article.create') }}">Inserisci articolo</a>
-                    <a class="nav-link text-dark" aria-current="page" href="{{ Route('article.index') }}">articoli</a>
-                    <a class="nav-link text-dark" aria-current="page" href="{{ Route('article.showCart') }}"><i class="fa-solid fa-cart-shopping">
-                        <span class="badge badge-pill badge-danger"></span>
-                        </i></a>
-                    <a class="nav-link text-dark" aria-current="page" href="#"
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ Auth::user()->name }}
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="nav-link text-dark" aria-current="page" href="{{ route('auth.profile') }}">Profilo</a></li>
+                      <li><a class="nav-link text-dark" href="{{ route('homepage') }}">Home</a></li>
+                      <li><a class="nav-link text-dark" href="{{ Route('article.create') }}">Inserisci articolo</a></li>
+                      <li><a class="nav-link text-dark" aria-current="page" href="{{ Route('article.index') }}">articoli</a></li>
+                      <li>
+                        <a class="nav-link text-dark" aria-current="page" href="#"
                         onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
                     <form action="{{ route('logout') }}" method="POST" id="form-logout">
                         @csrf
                     </form>
+                      </li>
+                    </ul>
+                  </div>
+                    {{-- <a class="nav-link text-dark" aria-current="page" href="{{ route('auth.profile') }}"></a> 
+                    <a class="nav-link text-dark" aria-current="page" href="{{ route('homepage') }}">Home</a>
+                    <a class="nav-link text-dark" aria-current="page" href="{{ Route('article.create') }}">Inserisci articolo</a>
+                    <a class="nav-link text-dark" aria-current="page" href="{{ Route('article.index') }}">articoli</a> --}}
+                   <a class="nav-link text-dark" aria-current="page" href="{{ Route('article.showCart') }}"><i class="fa-solid fa-cart-shopping">
+                        <span class="badge badge-pill badge-danger"></span>
+                        </i></a>
+                        <span class="badge badge-pill badge-primary">
+                            {{ session('cart') ? array_sum(session('cart')) : 0 }}
+                        </span>
+                     {{-- <a class="nav-link text-dark" aria-current="page" href="#"
+                        onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
+                    <form action="{{ route('logout') }}" method="POST" id="form-logout">
+                        @csrf
+                    </form> --}}
                 @else
                
                     

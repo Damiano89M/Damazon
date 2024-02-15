@@ -5,7 +5,7 @@
 }
 
 .img-show-cart {
-    width: 180px;
+    width: 140px;
 }
 
 .tbody-cart {
@@ -14,3 +14,16 @@
 /* .div-h4 {
     border-bottom: solid 1px;
 } */
+.apriModale {
+    border: solid 2px red;
+}
+.apriModale:hover {
+    border: solid 2px red;
+}
+.hr-showCart {
+    color: rgb(0, 48, 62);
+}
+.rowCart {
+    box-shadow: 3px 3px 8px rgb(137, 161, 168);
+    padding: 20px;
+}

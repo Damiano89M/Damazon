@@ -48,8 +48,19 @@
 
         <hr>
     </div>
-    {{-- Tutti gli annunci elettronica --}}
     <div class="container">
+        <div class="row row-watch">
+            <div class="col-12 col-md-6 p-5 justify-content-center  d-flex align-items-center watch">
+                <h2 class="h2-watch ">Stile che si adatta a te,<br> non il contrario!</h2>
+                <h2 class="h2-watch"></h2>
+            </div>
+            <div class="col-12 col-md-6">
+
+            </div>
+        </div>
+    </div>
+    {{-- Tutti gli annunci elettronica --}}
+    {{-- <div class="container">
         <div class="row justify-content-center row-card-home">
             <h3 class="ms-4 my-3"> Tutto elettronica</h3>
 
@@ -65,10 +76,10 @@
         </div>
 
         <hr>
-    </div>
+    </div> --}}
     {{-- Tutti gli annunci informatica --}}
 
-    <div class="container">
+    {{-- <div class="container">
         <div class="row justify-content-center row-card-home">
             <h3 class="ms-4 my-3">Tutto informatica</h3>
 
@@ -83,9 +94,9 @@
             @endforelse
         </div>
         <hr>
-    </div>
+    </div> --}}
     {{-- Tutti gli annunci telefonia --}}
-    <div class="container">
+   {{--  <div class="container">
         <div class="row justify-content-center row-card-home">
             <h3 class="ms-4 my-3">Tutto telefonia</h3>
 
@@ -100,9 +111,9 @@
             @endforelse
         </div>
         <hr>
-    </div>
+    </div> --}}
     {{-- Tutti gli annunci moda uomo --}}
-    <div class="container">
+   {{--  <div class="container">
         <div class="row justify-content-center row-card-home">
             <h3 class="ms-4 my-3">Tutto moda uomo</h3>
 
@@ -117,9 +128,9 @@
             @endforelse
         </div>
         <hr>
-    </div>
+    </div> --}}
     {{-- Tutti gli annunci moda donna --}}
-    <div class="container">
+   {{--  <div class="container">
         <div class="row justify-content-center row-card-home">
             <h3 class="ms-4 my-3">Tutto moda donna</h3>
 
@@ -134,9 +145,9 @@
             @endforelse
         </div>
         <hr>
-    </div>
+    </div> --}}
     {{-- Tutti gli annunci moda bambino --}}
-    <div class="container">
+    {{-- <div class="container">
         <div class="row justify-content-center row-card-home">
             <h3 class="ms-4 my-3">Tutto moda bambino</h3>
 
@@ -151,9 +162,9 @@
             @endforelse
         </div>
         <hr>
-    </div>
+    </div> --}}
     {{-- Tutti gli annunci moda bambina --}}
-    <div class="container">
+   {{--  <div class="container">
         <div class="row justify-content-center row-card-home">
             <h3 class="ms-4 my-3">Tutto moda bambina</h3>
 
@@ -168,9 +179,9 @@
             @endforelse
         </div>
         <hr>
-    </div>
+    </div> --}}
     {{-- Tutti gli annunci prima infanzia --}}
-    <div class="container">
+   {{--  <div class="container">
         <div class="row justify-content-center row-card-home">
             <h3 class="ms-4 my-3">Tutto prima infanzia</h3>
 
@@ -185,9 +196,9 @@
             @endforelse
         </div>
         <hr>
-    </div>
+    </div> --}}
     {{-- Tutti gli annunci casa e cucina --}}
-    <div class="container">
+   {{-- <div class="container">
         <div class="row justify-content-center row-card-home">
             <h3 class="ms-4 my-3">Tutto casa e cucina</h3>
 
@@ -202,9 +213,9 @@
             @endforelse
         </div>
         <hr>
-    </div>
+    </div> --}}
     {{-- Tutti gli annunci giochi --}}
-    <div class="container">
+    {{-- <div class="container">
         <div class="row justify-content-center row-card-home">
             <h3 class="ms-4 my-3">Tutto giochi</h3>
 
@@ -219,9 +230,9 @@
             @endforelse
         </div>
         <hr>
-    </div>
+    </div> --}}
     {{-- Tutti gli annunci giocattoli --}}
-    <div class="container">
+    {{-- <div class="container">
         <div class="row justify-content-center row-card-home">
             <h3 class="ms-4 my-3">Tutto giocattoli</h3>
 
@@ -236,9 +247,9 @@
             @endforelse
         </div>
         <hr>
-    </div>
+    </div> --}}
     {{-- Tutti gli annunci musica --}}
-    <div class="container">
+    {{-- <div class="container">
         <div class="row justify-content-center row-card-home">
             <h3 class="ms-4 my-3">Tutto musica</h3>
 
@@ -253,5 +264,5 @@
             @endforelse
         </div>
         <hr>
-    </div>
+    </div> --}}
 </x-layout>

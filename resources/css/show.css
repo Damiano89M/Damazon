@@ -1,18 +1,22 @@
 .container-show {
     padding: 70px;
 }
+.carousel {
+    border-radius: 25px !important;
+}
 .div-img-show {
-    width: 567px;
+    width:800px;
     height: 400px;
    
 }
 .img-show {
-    width: 350px;
+    width: 100%;
     height: 500px;
-    margin-left: 65px;
+    
 }
-.btn-carousel {
+.btn-carousel:hover {
     background-color: gray;
+    transition: 0.5s;
 }
 .input-show {
     width: 60px;
@@ -20,6 +24,7 @@
 .div-dati-show {
  background-color: white;
  border-radius: 10px;
+ padding: 20px;
 }
 /* .fascia-separazione {
     width: 100%;
@@ -29,3 +34,12 @@
     opacity: 0.5; 
     
 } */
+
+.price_show {
+    font-size: 30px;
+}
+
+.splide__slide img {
+    width: 100%;
+    height: auto;
+  }
