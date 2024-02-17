@@ -64,7 +64,11 @@
                         <button type="submit" class="btn btn-warning">Aggiungi al carrello</button>
                     </div>
                 </form>
+                @if ($article->quantity)
                 <span>Qnt.à disponibile: {{ $article->quantity }}</span>
+                @else
+                <span class="text-danger">Prodotto terminato</span>
+                @endif
             </div>
 
         </div>

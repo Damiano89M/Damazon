@@ -3,3 +3,4 @@ import 'bootstrap';
 import './script';
 import './carosello';
 import './home';
+import './index';

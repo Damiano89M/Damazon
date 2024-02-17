@@ -27,6 +27,8 @@ class ArticleController extends Controller
 
     public function indexCategory(Category $category) {
 
+        
+
         return view('article.indexCategory', compact('category'));
     }
     /**

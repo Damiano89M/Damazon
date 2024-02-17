@@ -11,10 +11,10 @@
         </div>
     </div>
     {{-- header --}}
-      <div class="container-fluid">
-        <div class="row carousel-container">
-            <div class="col-12 bg-header-index carousel-slide slide-1">
-
+      <div class="container">
+        <div class="row carousel-container bg-header-index">
+            <div class="col-12 col-md-8 carousel-slide slide-1 text-end d-flex align-items-center watch-index">
+                <h3 class="fs-1 testo-index-head ">Rivoluziona il tuo quotidiano con prodotti innovativi che fanno la differenza.</h3>
             </div>
         </div>
     </div>
@@ -38,6 +38,7 @@
                 <h3 class="text-center fs-1">Tutti gli annunci</h3>
             </div>
         </div>
+        <hr>
         <div class="row justify-content-center">
             @if (session('message'))
                 <div class="alert alert-success">

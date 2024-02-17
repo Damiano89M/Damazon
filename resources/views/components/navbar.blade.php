@@ -41,9 +41,9 @@
                    <a class="nav-link text-dark" aria-current="page" href="{{ Route('article.showCart') }}"><i class="fa-solid fa-cart-shopping">
                         <span class="badge badge-pill badge-danger"></span>
                         </i></a>
-                        <span class="badge badge-pill badge-primary">
+                        {{-- <span class="badge badge-pill badge-primary">
                             {{ session('cart') ? array_sum(session('cart')) : 0 }}
-                        </span>
+                        </span> --}}
                      {{-- <a class="nav-link text-dark" aria-current="page" href="#"
                         onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
                     <form action="{{ route('logout') }}" method="POST" id="form-logout">
