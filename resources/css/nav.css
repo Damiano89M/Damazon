@@ -15,4 +15,11 @@
 .nav-link:hover {
     background-color:rgb(201, 230, 239);
 }
+.count {
+    /* background-color: blue;
+    border-radius: 25px; */
+    position: relative;
+    top: -15px;
+    right: 23px;
+}
 

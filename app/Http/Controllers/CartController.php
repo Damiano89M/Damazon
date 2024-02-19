@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 
+use LDAP\Result;
 use App\Models\Cart;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
-use LDAP\Result;
 
 class CartController extends Controller
 {
@@ -30,15 +31,15 @@ class CartController extends Controller
                 ->first();
             // Verifica se l'articolo esiste prima di procedere
             if ($existingCart) {
-                 // Carrello esistente: aggiorna la quantità
-               /*  $existingCart->quantity += $request->quantity;
+                // Carrello esistente: aggiorna la quantità
+                /*  $existingCart->quantity += $request->quantity;
                 $existingCart->save(); */
                 $messaggio = "Prodotto già nel carrello";
-                return view('article.show', compact('article','existingCart', 'messaggio'));
-            }elseif($cart) {
-                
+                return view('article.show', compact('article', 'existingCart', 'messaggio'));
+            } elseif ($cart) {
+
                 $cart->name = $user->name;
-                $cart->email = $user->email; 
+                $cart->email = $user->email;
                 $cart->user_id = $user->id;
                 $cart->article_title = $article->title;
 
@@ -48,9 +49,9 @@ class CartController extends Controller
 
                     $cart->price = $article->price * $request->quantity;
                 }
-           
+
                 $cart->article_id = $article->id;
-               
+
                 $cart->images_id = $article->images->first()->id;
                 $cart->article_description = $article->description;
 
@@ -91,18 +92,19 @@ class CartController extends Controller
 
                 $cart->save();
 
+                // count cart
+                $cartItems = session('cart', []);
+                $cartItems[] = $cart->id;
+                Session::put('cart', $cartItems);
+
                 return redirect()->back()->with('message', 'Articolo aggiunto al carrello');
-            
             } else {
                 // Gestisci il caso in cui l'articolo non esiste
                 return redirect()->back()->with('error', 'Articolo non trovato');
             }
-
-            
         } else {
             return redirect()->route('login');
         }
-        
     }
     public function showCart()
     {
@@ -128,7 +130,7 @@ class CartController extends Controller
 
     // funzione aggiungi al carrello vecchia//
 
-   /*  public function addToCart(Article $article, Request $request)
+    /*  public function addToCart(Article $article, Request $request)
     {
 
         if (Auth::id()) {

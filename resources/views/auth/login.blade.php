@@ -28,14 +28,13 @@
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="remember" name="remember">
                         <label class="form-check-label" for="remember">Ricordami</label>
+                        <span class="ms-5"><a href="{{ route('password.request') }}">hai dimenticato la password? </a></span>
                     </div>
                     <button type="submit" class="btn btn-accesso">Accedi</button>
                     <div class="mt-3">
                         <span>Non sei ancora registrato? <a href="{{ route('register') }}">Registrati</a></span>
                     </div>
-                    <div class="mt-3 text-center">
-                        <span><a href="{{ route('password.request') }}">hai dimenticato la password? </a></span>
-                    </div>
+                    
                 </form>
             </div>
         </div>

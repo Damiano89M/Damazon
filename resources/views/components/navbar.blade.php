@@ -34,30 +34,20 @@
                       </li>
                     </ul>
                   </div>
-                    {{-- <a class="nav-link text-dark" aria-current="page" href="{{ route('auth.profile') }}"></a> 
-                    <a class="nav-link text-dark" aria-current="page" href="{{ route('homepage') }}">Home</a>
-                    <a class="nav-link text-dark" aria-current="page" href="{{ Route('article.create') }}">Inserisci articolo</a>
-                    <a class="nav-link text-dark" aria-current="page" href="{{ Route('article.index') }}">articoli</a> --}}
                    <a class="nav-link text-dark" aria-current="page" href="{{ Route('article.showCart') }}"><i class="fa-solid fa-cart-shopping">
-                        <span class="badge badge-pill badge-danger"></span>
+                        <span class="badge badge-pill badge-danger text-black count">
+                            {{ session('cart') ? count(session('cart')) : 0 }}
+                        </span>
                         </i></a>
-                        {{-- <span class="badge badge-pill badge-primary">
-                            {{ session('cart') ? array_sum(session('cart')) : 0 }}
-                        </span> --}}
-                     {{-- <a class="nav-link text-dark" aria-current="page" href="#"
-                        onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
-                    <form action="{{ route('logout') }}" method="POST" id="form-logout">
-                        @csrf
-                    </form> --}}
                 @else
-               
-                    
                 <a class="nav-link text-dark" href="{{ route('register') }}">Registrati</a>
                 <a class="nav-link text-dark" href="{{ route('login') }}">Accedi</a>
-                
                 @endauth
             </div>
         </div>
     </div>
 </nav>
 @endif
+               
+                    
+                
