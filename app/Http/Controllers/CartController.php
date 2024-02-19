@@ -97,6 +97,7 @@ class CartController extends Controller
                 $cartItems[] = $cart->id;
                 Session::put('cart', $cartItems);
 
+
                 return redirect()->back()->with('message', 'Articolo aggiunto al carrello');
             } else {
                 // Gestisci il caso in cui l'articolo non esiste

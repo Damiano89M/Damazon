@@ -36,6 +36,7 @@
                   </div>
                    <a class="nav-link text-dark" aria-current="page" href="{{ Route('article.showCart') }}"><i class="fa-solid fa-cart-shopping">
                         <span class="badge badge-pill badge-danger text-black count">
+                            
                             {{ session('cart') ? count(session('cart')) : 0 }}
                         </span>
                         </i></a>
