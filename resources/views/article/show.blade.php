@@ -1,6 +1,17 @@
 <x-layout>
+    <div class="container-fluid">
+        {{-- Categorie --}}
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center col-categorie">
+                @foreach ($categories as $category)
+                    <a class="mx-2 text-center categorie p-2"
+                        href="{{ route('article.indexCategory', $category) }}">{{ $category->name }}</a>
+                @endforeach
+            </div>
+        </div>
+    </div>
     <div class="container container-show">
-        @if  (session('message'))
+        @if (session('message'))
             <div id="message" class="alert alert-success">
                 {{ session('message') }}
             </div>
@@ -10,6 +21,7 @@
                 {{ $messaggio }}
             </div>
         @endif
+
         <div class="row" id="form">
             <div class="col-12 col-md-7">
                 <div id="showCarousel" class="carousel">
@@ -37,37 +49,37 @@
             </div>
             <div class="col-12 col-md-4 div-dati-show">
                 <h3>{{ $article->title }}</h3>
-                
+
                 <div class="d-flex">
                     @if ($article->discount_price)
-                    
-                    <p class="card-text text-danger price_show">
-                        <del>{{ $article->price }}€</del>
-                    </p>
-                    <p class="card-text text-success ms-2 price_show">
-                        {{ $article->discount_price }}€
-                    </p>
+                        <p class="card-text text-danger price_show">
+                            <del>{{ $article->price }}€</del>
+                        </p>
+                        <p class="card-text text-success ms-2 price_show">
+                            {{ $article->discount_price }}€
+                        </p>
                     @else
-                    <p class="card-text price_show">{{ $article->price }}€</p>
+                        <p class="card-text price_show">{{ $article->price }}€</p>
                     @endif
                 </div>
                 <p>{{ $article->created_at->translatedFormat('D d/m/y') }}</p>
                 <p>{{ Auth::user()->name ?? 'Non specificato' }}</p>
                 <p class="card-text colonna-2">{{ $article->created_at->diffForHumans() }}</p>
-                <p class="card-text colonna-2">{{ $article->category->name}}</p>
+                <p class="card-text colonna-2">{{ $article->category->name }}</p>
                 <form action="{{ route('article.addToCart', $article) }}" method="POST" class="row mb-3">
                     @csrf
                     <div class="col-12 col-md-3 d-flex">
-                        <input type="number" name="quantity" min="1" value="1" class="form-control input-show">
+                        <input type="number" name="quantity" min="1" value="1"
+                            class="form-control input-show">
                     </div>
                     <div class="col-12 col-md-6">
                         <button type="submit" class="btn btn-warning">Aggiungi al carrello</button>
                     </div>
                 </form>
                 @if ($article->quantity)
-                <span>Qnt.à disponibile: {{ $article->quantity }}</span>
+                    <span>Qnt.à disponibile: {{ $article->quantity }}</span>
                 @else
-                <span class="text-danger">Prodotto terminato</span>
+                    <span class="text-danger">Prodotto terminato</span>
                 @endif
             </div>
 
@@ -82,6 +94,25 @@
             <div class="col-6 fascia-separazione">
                 <p>{{ $article->description }}</p>
             </div>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 my-3">
+                <h3>Articoli simili</h3>
+            </div>
+            {{-- articoli correlati alla categoria del dettaglio --}}
+            @forelse ($article->category->articles as $category)
+            <div class="col-12 col-md-2 m-1">
+                <x-card :article="$category" />
+            </div>
+        @empty
+            <h3 class="text-center p-5">
+                Non ci sono articoli per questa categoria,
+                <a href="{{ route('article.create') }}">Aggiungine uno</a>
+            </h3>
+        @endforelse
         </div>
     </div>
 </x-layout>

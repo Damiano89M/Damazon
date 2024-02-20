@@ -48,7 +48,7 @@
 
         <hr>
     </div>
-    <div class="container">
+    <div class="container container-row-watch">
         <div class="row row-watch">
             <div class="col-12 col-md-6 p-5 justify-content-center  d-flex align-items-center watch">
                 <h2 class="h2-watch ">Stile che si adatta a te,<br> non il contrario!</h2>

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -51,9 +53,9 @@ class ArticleController extends Controller
      * Display the specified resource.
      */
     public function show(Article $article)
-    {
-        $category_giochi = Category::where('name','=', 'Giochi')->first();
-        return view('article.show', compact('article', 'category_giochi'));
+    {   
+       
+        return view('article.show', compact('article'));
     }
 
     /**
