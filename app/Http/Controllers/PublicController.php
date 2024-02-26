@@ -57,10 +57,7 @@ class PublicController extends Controller
                                       'category_musica'));
     }
 
-    public function profile() {
-       
-        return view('auth.profile');
-    }
+   
 
     
         

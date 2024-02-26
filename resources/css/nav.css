@@ -23,3 +23,8 @@
     right: 23px;
 }
 
+.image-profile {
+    width: 30px;
+    clip-path: circle();
+}
+

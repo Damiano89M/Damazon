@@ -13,19 +13,19 @@ use Livewire\Features\SupportFileUploads\WithFileUploads;
 class ArticleCreateForm extends Component
 {
     use WithFileUploads;
-    
+
     public $title;
     public $description;
     public $price;
     public $discount_price;
     public $temporary_images;
     public $images = [];
-   /*  public $image; */
+    /*  public $image; */
     public $article;
     public $category_id;
     public $quantity;
-  
-    
+
+
     protected $rules = [
 
         'title' => 'required|min:3|max:100',
@@ -34,7 +34,7 @@ class ArticleCreateForm extends Component
         'price' => 'required|numeric',
         'quantity' => 'required|numeric'
     ];
-        
+
     protected $messages = [
 
         'required' => 'Il campo deve essere compilato',
@@ -48,7 +48,8 @@ class ArticleCreateForm extends Component
         'price' => 'Il campo deve essere una cifra',
     ];
 
-    public function updatedTemporaryImages() {
+    public function updatedTemporaryImages()
+    {
 
         if ($this->validate([
             'temporary_images.*' => 'image|max:2000',
@@ -60,16 +61,17 @@ class ArticleCreateForm extends Component
     }
 
 
-    public function removeImage($key) {
-        if(in_array($key, array_keys($this->images))) {
+    public function removeImage($key)
+    {
+        if (in_array($key, array_keys($this->images))) {
             unset($this->images[$key]);
-
         }
     }
 
-   
 
-    public function store() {
+
+    public function store()
+    {
 
         $this->validate();
 
@@ -85,9 +87,9 @@ class ArticleCreateForm extends Component
 
         if (count($this->images)) {
 
-            foreach($this->images as $image) {
-               $this->article->images()->create(['path'=>$image->store('images', 'public')]);
-              /*   $newFileName = "articles/{$this->article->id}";
+            foreach ($this->images as $image) {
+                $this->article->images()->create(['path' => $image->store('images', 'public')]);
+                 /*  $newFileName = "articles/{$this->article->id}";
                 $newImage = $this->article->images()->create(['path' => $image->store($newFileName, 'public')]);
 
                 dispatch(new ResizeImage($newImage->path, 200, 200)); */
@@ -104,7 +106,7 @@ class ArticleCreateForm extends Component
 
     public function render()
     {
-        
+
         return view('livewire.article-create-form');
     }
 }

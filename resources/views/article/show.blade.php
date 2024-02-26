@@ -32,6 +32,10 @@
                                     <img src="{{ Storage::url($image->path) }}" class="img-fluid img-show"
                                         alt="immagini degli articoli">
                                 </div>
+                                {{-- <div class="carousel-item @if ($loop->first) active @endif">
+                                    <img src="{{$image->getUrl(800 , 450)  }}" class="img-fluid img-carousel"
+                                    alt="image">
+                                </div> --}}
                             @endforeach
                         </div>
                     @endif
@@ -65,7 +69,7 @@
                 <p>{{ $article->created_at->translatedFormat('D d/m/y') }}</p>
                 <p>{{ Auth::user()->name ?? 'Non specificato' }}</p>
                 <p class="card-text colonna-2">{{ $article->created_at->diffForHumans() }}</p>
-                <p class="card-text colonna-2">{{ $article->category->name }}</p>
+                <p class="card-text colonna-2">{{ $article->category->name ?? 'Non specificata' }}</p>
                 <form action="{{ route('article.addToCart', $article) }}" method="POST" class="row mb-3">
                     @csrf
                     <div class="col-12 col-md-3 d-flex">
@@ -102,17 +106,22 @@
             <div class="col-12 my-3">
                 <h3>Articoli simili</h3>
             </div>
+            @if ($article->category)
+                
             {{-- articoli correlati alla categoria del dettaglio --}}
             @forelse ($article->category->articles as $category)
-            <div class="col-12 col-md-2 m-1">
-                <x-card :article="$category" />
-            </div>
-        @empty
-            <h3 class="text-center p-5">
-                Non ci sono articoli per questa categoria,
-                <a href="{{ route('article.create') }}">Aggiungine uno</a>
-            </h3>
-        @endforelse
+                <div class="col-12 col-md-2 m-1">
+                    <x-card :article="$category" />
+                </div>
+            @empty
+                <h3 class="text-center p-5">
+                    Non ci sono articoli per questa categoria,
+                    <a href="{{ route('article.create') }}">Aggiungine uno</a>
+                </h3>
+            @endforelse
+            @else
+            
+            @endif
         </div>
     </div>
 </x-layout>

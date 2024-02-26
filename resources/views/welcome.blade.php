@@ -12,7 +12,7 @@
         {{-- Header --}}
         <div class="row mt-2 bg-header">
             <div class="col-12 div-head text-center">
-                <h2 class="p-4">Comincia a guadagnare con il tuo usato!</h2>
+                <h1 class="p-4 fs-2">Comincia a guadagnare con il tuo usato!</h1>
                 <a class="btn btn-div-head" href="{{ route('article.create') }}">Inizia a vendere</a>
             </div>
         </div>

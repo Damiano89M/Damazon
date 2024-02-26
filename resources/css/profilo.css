@@ -32,3 +32,45 @@
 .chiudi:hover {
   color: black;
 }
+
+.icon {
+  margin-top: 10px;
+}
+
+tbody {
+  overflow: scroll !important;
+}
+
+.infoUser {
+  width: 24vw;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  border-right: solid 1px;
+  
+ 
+}
+
+.img-profile {
+  clip-path: circle();
+  width: 150px;
+}
+.imgAttuale {
+  width: 100px;
+}
+.div-img-attuale {
+  display: flex;
+  flex-direction: column;
+}
+.modifica {
+  text-decoration: none;
+  color: black;
+  background-color: #aaa;
+  width: 80px;
+  border-radius: 10px;
+  margin-top: 20vh;
+}
+.modifica:hover {
+  background-color: #9a9a9a;
+  transition: all 1s cubic-bezier(.215, .61, .355, 1);
+}

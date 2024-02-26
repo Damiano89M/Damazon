@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "070bcd2a7c17cec639ea3c2981565271",
+    "content-hash": "2bff1b345d24b421afe4de65491f9754",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1412,16 +1412,16 @@
         },
         {
             "name": "intervention/image",
-            "version": "3.3.2",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "8494cc91e3906e36ca58acc3dfe70fa331520b88"
+                "reference": "fe1b0e2e64157133322974c28b44c25c2770a0c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/8494cc91e3906e36ca58acc3dfe70fa331520b88",
-                "reference": "8494cc91e3906e36ca58acc3dfe70fa331520b88",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/fe1b0e2e64157133322974c28b44c25c2770a0c5",
+                "reference": "fe1b0e2e64157133322974c28b44c25c2770a0c5",
                 "shasum": ""
             },
             "require": {
@@ -1433,6 +1433,7 @@
                 "mockery/mockery": "^1.6",
                 "phpstan/phpstan": "^1",
                 "phpunit/phpunit": "^9",
+                "slevomat/coding-standard": "~8.0",
                 "squizlabs/php_codesniffer": "^3.8"
             },
             "suggest": {
@@ -1467,7 +1468,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Intervention/image/issues",
-                "source": "https://github.com/Intervention/image/tree/3.3.2"
+                "source": "https://github.com/Intervention/image/tree/3.4.0"
             },
             "funding": [
                 {
@@ -1479,7 +1480,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-01-27T19:34:18+00:00"
+            "time": "2024-02-14T15:11:21+00:00"
         },
         {
             "name": "intervention/image-laravel",
@@ -4426,16 +4427,16 @@
         },
         {
             "name": "spatie/image",
-            "version": "3.3.4",
+            "version": "3.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/image.git",
-                "reference": "6bd35eecd44a08f93fd0436f99e9adbe3ebc05da"
+                "reference": "e74f161b1e28e97752a70ef456f5ae7bad2277c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/image/zipball/6bd35eecd44a08f93fd0436f99e9adbe3ebc05da",
-                "reference": "6bd35eecd44a08f93fd0436f99e9adbe3ebc05da",
+                "url": "https://api.github.com/repos/spatie/image/zipball/e74f161b1e28e97752a70ef456f5ae7bad2277c1",
+                "reference": "e74f161b1e28e97752a70ef456f5ae7bad2277c1",
                 "shasum": ""
             },
             "require": {
@@ -4482,7 +4483,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/image/tree/3.3.4"
+                "source": "https://github.com/spatie/image/tree/3.3.5"
             },
             "funding": [
                 {
@@ -4494,7 +4495,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-01-15T12:17:58+00:00"
+            "time": "2024-02-16T10:03:53+00:00"
         },
         {
             "name": "spatie/image-optimizer",
