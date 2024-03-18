@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -12,6 +13,10 @@ class ProfileController extends Controller
     }
 
     public function profileCreate() {
-        return view('auth.profileCreate');
+
+        $articles = Article::all();
+        return view('auth.profileCreate', compact('articles'));
     }
+
+   
 }

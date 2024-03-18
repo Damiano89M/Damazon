@@ -36,4 +36,5 @@ Route::post('/Article/addToCart{article}', [CartController::class, 'addToCart'])
 Route::get('/Article/show/cart', [CartController::class, 'showCart'])->name('article.showCart');
 /* Route::delete('Article/edit/cart{article}', [CartController::class, 'destroy'])->name('article.destroyCart'); */
 
-
+//cambio lingua
+Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('set_language_locale');

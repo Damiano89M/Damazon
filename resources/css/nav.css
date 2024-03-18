@@ -28,3 +28,24 @@
     clip-path: circle();
 }
 
+.div-dropdown button {
+    width: 40px;
+    height: 40px;
+    background-position: center;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    
+}
+
+.menu-open {
+    border: solid 1px;
+}
+
+
+
+
+
+

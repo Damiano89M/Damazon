@@ -29,5 +29,14 @@
                 <livewire:article-list />
             </div>
         </div>
+        <div class="row justify-content-center mt-5">
+            @forelse (Auth::user()->Articles as $article )
+                <div class="col-12 col-md-3">
+                    <x-card :article="$article" />
+                </div>
+            @empty
+                
+            @endforelse
+        </div>
     </div>
 </x-layout>

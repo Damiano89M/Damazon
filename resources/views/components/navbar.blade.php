@@ -17,24 +17,24 @@
             <div class="collapse navbar-collapse justify-content-end azioni" id="navbarNavAltMarkup">
                 <div class="navbar-nav ">
                     @auth
-                        <div class="dropdown">
-                            @if (Auth::user()->image)
-                                <img src="{{ Storage::url(Auth::user()->image) }}" alt="immagine profilo"
-                                    class="img-fluid image-profile">
-                            @else
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQJxKGGpPc9-5g25KWwnsCCy9O_dlS4HWo5A&usqp=CAU"
-                                    alt="immagine default" class="img-fluid image-profile">
-                            @endif
+                        <div class="dropdown rounded-circle shadow div-dropdown"
+                            style="background-image: url({{ Storage::url(Auth::user()->image) }})">
 
-                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+
+                            <button id="button" class=" rounded-circle" type="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                {{ Auth::user()->name }}
 
+                                @if (Auth::user()->image)
+                                    <img src="" alt="" class="img-fluid image-profile">
+                                @else
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQJxKGGpPc9-5g25KWwnsCCy9O_dlS4HWo5A&usqp=CAU"
+                                        alt="immagine default" class="img-fluid image-profile">
+                                @endif
                             </button>
                             <ul class="dropdown-menu">
+                                <li><a class="nav-link text-dark" href="{{ route('homepage') }}">Home</a></li>
                                 <li><a class="nav-link text-dark" aria-current="page"
                                         href="{{ route('auth.profile') }}">Profilo</a></li>
-                                <li><a class="nav-link text-dark" href="{{ route('homepage') }}">Home</a></li>
                                 <li><a class="nav-link text-dark" href="{{ Route('article.create') }}">Inserisci
                                         articolo</a></li>
                                 <li><a class="nav-link text-dark" aria-current="page"
@@ -46,6 +46,17 @@
                                         @csrf
                                     </form>
                                 </li>
+                                <div class="d-flex">
+                                    <li class="nav-item">
+                                        <x-_locale lang="it" nation="it" />
+                                    </li>
+                                    <li class="nav-item">
+                                        <x-_locale lang="en" nation="gb" />
+                                    </li>
+                                    <li class="nav-item">
+                                        <x-_locale lang="es" nation="es" />
+                                    </li>
+                                </div>
                             </ul>
                         </div>
                         <a class="nav-link text-dark" aria-current="page" href="{{ Route('article.showCart') }}"><i

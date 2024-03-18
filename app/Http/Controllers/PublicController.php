@@ -57,7 +57,11 @@ class PublicController extends Controller
                                       'category_musica'));
     }
 
-   
+    public function setLanguage($lang) {
+        
+        session()->put('locale', $lang);
+        return redirect()->back();
+    }
 
     
         

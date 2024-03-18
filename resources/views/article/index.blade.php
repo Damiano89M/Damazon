@@ -35,7 +35,7 @@
     <div class="container container-card">
         <div class="row mt-4">
             <div class="col-12">
-                <h3 class="text-center fs-1">Tutti gli annunci</h3>
+                <h3 class="text-center fs-1">{{ __('ui.allAnnouncements') }}</h3>
             </div>
         </div>
         <hr>

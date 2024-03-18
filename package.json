@@ -3,7 +3,8 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "watch": "vite build --watch"
     },
     "devDependencies": {
         "axios": "^1.6.4",
@@ -12,6 +13,9 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^6.5.1",
-        "bootstrap": "^5.3.2"
+        "bootstrap": "^5.3.2",
+        "flag-icon-css": "^4.1.7"
+        
+
     }
 }
