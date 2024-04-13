@@ -78,13 +78,18 @@
                     <div class="col-12 col-md-6 modale" id="myModal{{ $cart->id }}">
                         <div class="modale-contenuto">
                             <span class="chiudi" data-target="myModal{{ $cart->id }}">&times;</span>
-                            <p>Sicuro di voler togliere l'annuncio dal carrello?</p>
-                            <a wire:click="destroy({{ $cart }})" class="btn btn-danger">Elimina</a>
+                            <p>Sicuro di voler eliminare l'annuncio dal carrello?</p>
+                            {{-- <a wire:click="destroy({{ $cart }})" class="btn btn-danger">Elimina</a> --}}
+                            <form action="{{ route('article.destroyCart', $cart)  }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button  type="submit" class="btn btn-list mx-1">Elimina</button>
+                            </form>
                         </div>
                     </div>
                 @endif
             @empty
             @endforelse
         </div>
-    </div>{{--  --}}
+    </div>
 </div>

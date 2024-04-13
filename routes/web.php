@@ -34,7 +34,7 @@ Route::get('/Article/edit{article}', [ArticleController::class, 'edit'])->name('
 //carrello//
 Route::post('/Article/addToCart{article}', [CartController::class, 'addToCart'])->name('article.addToCart');
 Route::get('/Article/show/cart', [CartController::class, 'showCart'])->name('article.showCart');
-/* Route::delete('Article/edit/cart{article}', [CartController::class, 'destroy'])->name('article.destroyCart'); */
+Route::delete('Article/cart/destroy/{cart}', [CartController::class, 'destroy'])->name('article.destroyCart');
 
 //cambio lingua
 Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('set_language_locale');

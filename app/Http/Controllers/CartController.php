@@ -115,19 +115,23 @@ class CartController extends Controller
         return view('article.showCart', compact('carts'));
     }
 
-    /*   public function destroy(Cart $cart)
-    {
-      
-
-            foreach ($cart->images() as $image) {
-               Storage::delete($image);
-               $image->delete();
-    
-            }
+      public function destroy(Cart $cart)
+    {   
+            // Rimuovi l'ID del carrello dalla sessione
+            $cartItems = session('cart', []);
+            $cartItems = array_diff($cartItems, [$cart->id]);
+            Session::put('cart', $cartItems);
+            
             $cart->delete();
-        session()->flash('message', 'Articolo eliminato con successo');
+
+        // Se il carrello è vuoto, azzera la sessione del carrello
+        if (empty($cartItems)) {
+            Session::forget('cart');
+        }
+            
+        return view('article.showCart', compact('cart'))->with('message', 'Articolo eliminato con successo');
        
-    } */
+    }
 
     // funzione aggiungi al carrello vecchia//
 

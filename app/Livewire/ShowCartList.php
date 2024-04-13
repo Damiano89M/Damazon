@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ShowCartList extends Component
 {
-    public function destroy(Cart $cart)
+   /*  public function destroy(Cart $cart)
     {
         // Rimuovi l'ID del carrello dalla sessione
         $cartItems = session('cart', []);
@@ -27,7 +27,7 @@ class ShowCartList extends Component
         // Restituisci una risposta appropriata (includendo il conteggio aggiornato)
 
         session()->flash('message', 'Articolo rimosso dal carrello');
-    }
+    } */
 
     public function render()
     {
