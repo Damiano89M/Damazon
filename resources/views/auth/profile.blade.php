@@ -30,12 +30,12 @@
             </div>
         </div>
         <div class="row justify-content-center mt-5">
-            @forelse (Auth::user()->Articles as $article )
+            @forelse (Auth::user()->articles as $article )
                 <div class="col-12 col-md-3">
                     <x-card :article="$article" />
                 </div>
             @empty
-                
+                <h3>non ci sono articoli da mostrare</h3>
             @endforelse
         </div>
     </div>
